@@ -13,7 +13,7 @@ My research interests mainly include <b><i style="color:#7b5aa6">Robotics Manipu
 ## Education
 
 <div class="edu-row">
-  <img src="./assets/img/logo.jpg" alt="SCUT logo" class="edu-logo">
+  <img src="./assets/img/logo.jpg" alt="SCUT logo" class="edu-logo" style="width: 60px; height: auto;">
   <div class="edu-text">
     <strong>South China University of Technology (SCUT)</strong><br>
     B.Eng., Future Technology (2024 - present)
