@@ -46,3 +46,92 @@ missing:~$ /bin/echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
+### 路径定位
+
+**相对路径**: 相对于当前工作目录的路径，当前工作目录可以使用 `pwd` 命令来获取
+
+**绝对路径**: 路径 `/` 代表的是系统的根目录, 所有的文件夹都包括在这个路径之下，在 Windows 上每个盘都有一个根目录（例如： `C:\`）。 
+
+本课程时使用的是 Linux 系统, 如果某个路径以 `/` 开头，那么它是一个 *绝对路径*，其他的都是 *相对路径* 。
+
+```shell
+missing:~$ pwd
+/home/missing
+missing:~$ cd /home
+missing:/home$ pwd
+/home
+missing:/home$ cd ..
+missing:/$ pwd
+/
+missing:/$ cd ./home
+missing:/home$ pwd
+/home
+missing:/home$ cd missing
+missing:~$ pwd
+/home/missing
+missing:~$ ../../bin/echo hello
+hello
+```
+
+为了查看指定目录下包含哪些文件，我们使用 `ls` 命令：
+
+```shell
+missing:~$ ls
+missing:~$ cd ..
+missing:/home$ ls
+missing
+missing:/home$ cd ..
+missing:/$ ls
+bin
+boot
+dev
+etc
+home
+...
+```
+
+### 参数化
+
+大多数的命令接受标记和选项（带有值的标记），它们以 `-` 开头，并可以改变程序的行为。
+
+**通常，在执行程序时使用 `-h` 或 `--help` 标记可以打印帮助信息来了解有哪些可用的标记或选项。**
+
+```shell 
+missing:~$ ls --help 
+ -l                         use a long listing format
+missing:~$ ls -l /home
+drwxr-xr-x 1 missing  users  4096 Jun 15  2019 missing
+```
+
+这个参数可以更加详细地列出目录下文件或文件夹的信息
+
+* `drwxr-xr-x`:其中`d` 表明missing 是一个目录,后面9个字符三个三个一组, 分别为**文件所有者权限** ,**用户组权限**,**其他所有人拥有的权限** ,
+  * `r`:读
+  * `w`:写
+  * `x`:可执行权限
+  * `-`:无权限
+
+还有几个趁手的命令是您需要掌握的，例如 `mv`（用于重命名或移动文件）、 `cp`（拷贝文件）以及 `mkdir`（新建文件夹）。
+
+如果想要知道关于程序参数、输入输出的信息，或是想要了解它们的工作方式，可以使用 `man` ,它接受一个程序名作为参数，然后将它的文档（用户手册）展现给您。
+
+```shell
+missing:~$ man ls
+```
+
+**用`q`退出** 
+
+### IO流
+
+在 shell 中，程序有两个主要的“流”：它们的输入流和输出流。 当程序尝试读取信息时，它们会从输入流中进行读取，当程序打印信息时，它们会将信息输出到输出流中。 通常，一个程序的输入输出流都是您的终端。也就是，您的键盘作为输入，显示器作为输出。 但是，我们也可以重定向这些流！
+
+```shell
+missing:~$ echo hello > hello.txt
+missing:~$ cat hello.txt
+hello
+missing:~$ cat < hello.txt
+hello
+missing:~$ cat < hello.txt > hello2.txt
+missing:~$ cat hello2.txt
+hello
+```
