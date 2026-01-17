@@ -214,4 +214,12 @@ touch semester
 >
 > 程序加载器会被指示运行程序*`/bin/sh`*，并将`/bin/sh`作为第一个参数 *传递。*
 
-1. 使用 `|` 和 `>` ，将 `semester` 文件输出的最后更改日期信息，写入主目录下的 `last-modified.txt` 的文件中
+使用 `|` 和 `>` ，将 `semester` 文件输出的最后更改日期信息，写入主目录下的 `last-modified.txt` 的文件中
+
+```shell
+./semester | grep -i '^last-modified:' > ~/last-modified.txt
+```
+
+<span style="color: purple;">**Answer**</span>:
+
+首先执行`./semester` 然后通过`|` 的管道把左边的输出喂给右边命令当输入,`grep -i '^last-modified:'` 利用正则表达式截取开头为last-modified:的行然后重定向输出到~/last-modified.txt中
