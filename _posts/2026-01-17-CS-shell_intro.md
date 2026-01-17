@@ -178,23 +178,40 @@ open: Permission denied
 2. 用 `man` 查看程序 `touch` 的使用手册。
 3. 用 `touch` 在 `missing` 文件夹中新建一个叫 `semester` 的文件。
 
+```shell
+touch semester
+```
 
+4. 将以下内容一行一行地写入`semester` 
 
-1. 将以下内容一行一行地写入`semester` 
+```
+ #!/bin/sh
+ curl --head --silent https://missing.csail.mit.edu
+```
 
-   文件：
+第一行可能有点棘手， `#` 在 Bash 中表示注释，而 `!` 即使被双引号（`"`）包裹也具有特殊的含义。 单引号（`'`）则不一样，此处利用这一点解决输入问题。更多信息请参考 [Bash quoting 手册](https://www.gnu.org/software/bash/manual/html_node/Quoting.html)
 
-   ```
-    #!/bin/sh
-    curl --head --silent https://missing.csail.mit.edu
-   ```
+* 尝试执行这个文件。(./semester`）如果程序无法执行，请使用 `ls 命令来获取信息并理解其不能执行的原因。
 
-   第一行可能有点棘手， `#` 在 Bash 中表示注释，而 `!` 即使被双引号（`"`）包裹也具有特殊的含义。 单引号（`'`）则不一样，此处利用这一点解决输入问题。更多信息请参考 [Bash quoting 手册](https://www.gnu.org/software/bash/manual/html_node/Quoting.html)
+* 查看 `chmod` 的手册(例如，使用 `man chmod` 命令)
 
-2. 尝试执行这个文件。例如，将该脚本的路径（`./semester`）输入到您的 shell 中并回车。如果程序无法执行，请使用 `ls` 命令来获取信息并理解其不能执行的原因。
+  * 使用 `chmod` 命令改变权限，使 `./semester` 能够成功执行。
 
-3. 查看 `chmod` 的手册(例如，使用 `man chmod` 命令)
+    ```shell
+    chmod +x semester
+    ```
 
-4. 使用 `chmod` 命令改变权限，使 `./semester` 能够成功执行，不要使用 `sh semester` 来执行该程序。您的 shell 是如何知晓这个文件需要使用 `sh` 来解析呢？更多信息请参考：[shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
+    您的 shell 是如何知晓这个文件需要使用 `sh` 来解析呢？更多信息请参考：[shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
 
-5. 使用 `|` 和 `>` ，将 `semester` 文件输出的最后更改日期信息，写入主目录下的 `last-modified.txt` 的文件中
+> [!TIP]
+>
+> Hash Bang:`#!` :当一个带有 shebang 的文本文件被当作[类 Unix](https://en.wikipedia.org/wiki/Unix-like)操作系统中的可执行文件使用时，[程序加载器](https://en.wikipedia.org/wiki/Loader_(computing))机制会将文件首行的其余部分解析为解释器指令。加载器会执行指定的[解释器](https://en.wikipedia.org/wiki/Interpreter_(computing))程序，并将最初尝试运行脚本时使用的路径作为参数传递给它，以便程序可以使用该文件作为输入数据。
+>
+> ```shell
+> #!/bin/sh
+>  curl --head --silent https://missing.csail.mit.edu
+> ```
+>
+> 程序加载器会被指示运行程序*`/bin/sh`*，并将`/bin/sh`作为第一个参数 *传递。*
+
+1. 使用 `|` 和 `>` ，将 `semester` 文件输出的最后更改日期信息，写入主目录下的 `last-modified.txt` 的文件中
