@@ -126,3 +126,88 @@ $ disown %1 #把它从当前 shell 管理中移除：
 #现在你可以直接关终端/断开 SSH，作业一般不会跟着死。
 ```
 
+### 别名
+
+利用`alias` 可以为长命令设置别名,shell 的别名相当于一个长命令的缩写，shell 会自动将其替换成原本的命令。
+
+```shell
+alias alias_name="command_to_alias arg1 arg2"
+```
+
+```shell
+# 创建常用命令的缩写
+alias ll="ls -lh"
+
+# 能够少输入很多
+alias gs="git status"
+alias gc="git commit"
+alias v="vim"
+
+# 手误打错命令也没关系
+alias sl=ls
+
+# 重新定义一些命令行的默认行为
+alias mv="mv -i"           # -i prompts before overwrite
+alias mkdir="mkdir -p"     # -p make parent dirs as needed
+alias df="df -h"           # -h prints human readable format
+
+# 别名可以组合使用
+alias la="ls -A"
+alias lla="la -l"
+
+# 在忽略某个别名
+\ls
+# 或者禁用别名
+unalias la
+
+# 获取别名的定义
+alias ll
+# 会打印 ll='ls -lh'
+```
+
+值得注意的是，在默认情况下 shell 并不会保存别名。为了让别名持续生效，需要将配置放进 shell 的启动文件里，像是 `.bashrc` 或 `.zshrc`
+
+### 配置文件
+
+**点文件**:文件名以 `.` 开头，例如 `~/.vimrc`的文件称为$Dot\ Files$  经常作为配置文件存在(它们默认是隐藏文件，`ls` 并不会显示它们)
+
+shell 的配置也是通过这类文件完成的。在启动时，您的 shell 程序会读取很多文件以加载其配置项。根据 shell 本身的不同，您从登录开始还是以交互的方式完成这一过程可能会有很大的不同
+
+ `bash` 通过编辑 `.bashrc` 或 `.bash_profile` 来进行配置。在文件中可以添加需要在启动时执行的命令，例如上文我们讲到过的别名，或者环境变量。
+
+> 实际上，很多程序都要求您在 shell 的配置文件中包含一行类似 `export PATH="$PATH:/path/to/program/bin"` 的命令，这样才能确保这些程序能够被 shell 找到。
+
+下面列举一些常用的配置
+
+- `bash` - `~/.bashrc`, `~/.bash_profile`
+- `git` - `~/.gitconfig`
+- `vim` - `~/.vimrc` 和 `~/.vim` 目录
+- `ssh` - `~/.ssh/config`
+- `tmux` - `~/.tmux.conf`
+
+**配置文件管理：** 用版本控制系统进行管理，然后通过脚本将其 **符号链接** 到需要的地方这么做有如下好处：
+
+- **安装简单**: 如果您登录了一台新的设备，在这台设备上应用您的配置只需要几分钟的时间；
+- **可移植性**: 您的工具在任何地方都以相同的配置工作
+- **同步**: 在一处更新配置文件，可以同步到其他所有地方
+- **变更追踪**: 您可能要在整个程序员生涯中持续维护这些配置文件，而对于长期项目而言，版本历史是非常重要的
+
+**配置文件中需要放些什么**: 作者们在文章中会分享他们的配置。还有一种方法就是直接浏览其他人的配置文件：您可以在这里找到无数的 [dotfiles 仓库](https://github.com/search?o=desc&q=dotfiles&s=stars&type=Repositories) —— 其中最受欢迎的那些可以在 [这里](https://github.com/mathiasbynens/dotfiles) 找到（建议您不要直接复制别人的配置）。[这里](https://dotfiles.github.io/) 也有一些非常有用的资源。
+
+**有时您仅希望特定的配置只在某些设备上生效,可以通过if的shell脚本语言来编写, 或者`include`功能** 
+
+```shell
+if [[ "$(uname)" == "Linux" ]]; then {do_something}; fi
+
+# 使用和 shell 相关的配置时先检查当前 shell 类型
+if [[ "$SHELL" == "zsh" ]]; then {do_something}; fi
+
+# 您也可以针对特定的设备进行配置
+if [[ "$(hostname)" == "myServer" ]]; then {do_something}; fi
+```
+
+```shell
+[include]
+    path = ~/.gitconfig_local
+```
+
