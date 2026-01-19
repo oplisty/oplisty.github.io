@@ -60,11 +60,11 @@ ssh myserver journalctl
 * `SIGTSTP` 信号:键入 `Ctrl-Z` 会让 shell 发送 `SIGTSTP` 信号
 
   * 它不是让进程退出，而是让进程“暂停”（stop）
-  * 可以使用 [`fg`](https://www.man7.org/linux/man-pages/man1/fg.1p.html) 或 [`bg`](http://man7.org/linux/man-pages/man1/bg.1p.html) 命令恢复暂停的工作。它们分别表示在前台继续或在后台继续。
+  * 可以使用 [`fg`](https://www.man7.org/linux/man-pages/man1/fg.1p.html) 或 [`bg`](https://man7.org/linux/man-pages/man1/bg.1p.html) 命令恢复暂停的工作。它们分别表示在前台继续或在后台继续。
 
   
 
-[`jobs`](http://man7.org/linux/man-pages/man1/jobs.1p.html) 命令会列出当前终端会话中尚未完成的全部任务。您可以使用 pid 引用这些任务（也可以用 [`pgrep`](https://www.man7.org/linux/man-pages/man1/pgrep.1.html) 找出 pid）。
+[`jobs`](https://man7.org/linux/man-pages/man1/jobs.1p.html) 命令会列出当前终端会话中尚未完成的全部任务。您可以使用 pid 引用这些任务（也可以用 [`pgrep`](https://www.man7.org/linux/man-pages/man1/pgrep.1.html) 找出 pid）。
 
 ```shell
 $ jobs
@@ -97,7 +97,7 @@ fg #想看它的实时输出/或需要交互时
 python train.py > train.log & #在后台运行
 ```
 
-**注意⚠️❗️❗️: 后台的进程仍然是您的终端进程的子进程**，一旦您关闭终端（会发送另外一个信号 `SIGHUP`），这些后台的进程也会终止。为了防止这种情况发生可以使用 [`nohup`](https://www.man7.org/linux/man-pages/man1/nohup.1.html)（一个用来忽略 `SIGHUP` 的封装）来运行程序。针对已经运行的程序，可以使用 `disown`
+**注意⚠️❗️❗️: 后台的进程仍然是您的终端进程的子进程**，一旦您关闭终端（会发送另外一个信号 `SIGHUP`），这些后台的进程也会终止。为了防止这种情况发生可以使用 [`nohup`](https://www.man7.org/linux/man-pages/man1/kill.1.html)（一个用来忽略 `SIGHUP` 的封装）来运行程序。针对已经运行的程序，可以使用 `disown`
 
 ```shell
 nohup python train.py > train.log 2>&1 &
