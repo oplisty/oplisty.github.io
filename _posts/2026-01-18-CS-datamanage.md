@@ -234,7 +234,7 @@ ssh foo@bar.mit.edu
 
 我们只需要向服务器证明客户端持有对应的私钥，而不需要公开其私钥。这样就可以避免每次登录都输入密码的麻烦了
 
-1. 使用 [`ssh-keygen`](http://man7.org/linux/man-pages/man1/ssh-keygen.1.html) 命令可以生成一对密钥：
+1. 使用 [`ssh-keygen`](https://man7.org/linux/man-pages/man1/ssh-keygen.1.html) 命令可以生成一对密钥：
 
 ```shell
 ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519
