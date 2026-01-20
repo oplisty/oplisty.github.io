@@ -432,3 +432,13 @@ Line #    Mem usage  Increment   Line Contents
 - **网络连接和配置** - [`ss`](https://man7.org/linux/man-pages/man8/ss.8.html) 能帮助我们监控网络包的收发情况以及网络接口的显示信息。`ss` 常见的一个使用场景是找到端口被进程占用的信息。如果要显示路由、网络设备和接口信息，您可以使用 [`ip`](https://man7.org/linux/man-pages/man8/ip.8.html) 命令。注意，`netstat` 和 `ifconfig` 这两个命令已经被前面那些工具所代替了。
 - **网络使用** - [`nethogs`](https://github.com/raboof/nethogs) 和 [`iftop`](https://www.ex-parrot.com/pdw/iftop/) 是非常好的用于对网络占用进行监控的交互式命令行工具。
 
+## 一些经验
+
+1. 当我们希望去监听的端口已经被其他进程占用了。
+   * 首先执行 `python -m http.server 4444` 启动一个最简单的 web 服务器来监听 `4444` 端口。
+   * 在另外一个终端中，执行 `lsof | grep LISTEN` 打印出所有监听端口的进程及相应的端口。
+   * 找到对应的 PID 然后使用 `kill <PID>` 停止该进程。
+2. 限制进程资源也是一个非常有用的技术。
+   *  stress -c 3 :启动 **3 个 CPU worker**，每个 worker 都会尽量吃满一个 CPU 核心
+   *  htop 对 CPU 消耗进行可视化。
+   *  taskset --cpu-list 0,2 stress -c 3 :把 `stress` 进程（以及它创建的线程/子进程）限制在 **CPU 0 和 CPU 2** 上运行。
