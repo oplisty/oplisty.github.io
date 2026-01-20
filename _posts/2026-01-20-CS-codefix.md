@@ -103,15 +103,15 @@ echo -e "\e[38;2;255;0;0mThis is red\e[0m"
 
 大多数的程序都会将日志保存在您的系统中的某个地方。对于 UNIX 系统来说，程序的日志通常存放在 `/var/log` 
 
-目前，系统开始使用 **system log**，您所有的日志都会保存在这里。大多数（但不是全部的）Linux 系统都会使用 `systemd`，这是一个系统守护进程，它会控制您系统中的很多东西，例如哪些服务应该启动并运行。`systemd` 会将日志以某种特殊格式存放于 `/var/log/journal`，您可以使用 [`journalctl`](http://man7.org/linux/man-pages/man1/journalctl.1.html) 命令显示这些消息。
+目前，系统开始使用 **system log**，您所有的日志都会保存在这里。大多数（但不是全部的）Linux 系统都会使用 `systemd`，这是一个系统守护进程，它会控制您系统中的很多东西，例如哪些服务应该启动并运行。`systemd` 会将日志以某种特殊格式存放于 `/var/log/journal`，您可以使用 [`journalctl`](https://man7.org/linux/man-pages/man1/journalctl.1.html) 命令显示这些消息。
 
-对于大多数的 UNIX 系统，您也可以使用 [`dmesg`](http://man7.org/linux/man-pages/man1/dmesg.1.html) 命令来读取内核的日志。
+对于大多数的 UNIX 系统，您也可以使用 [`dmesg`](https://man7.org/linux/man-pages/man1/dmesg.1.html) 命令来读取内核的日志。
 
 ```shell
 sudo dmesg
 ```
 
-如果您希望将日志加入到系统日志中，您可以使用 [`logger`](http://man7.org/linux/man-pages/man1/logger.1.html) 这个 shell 程序。
+如果您希望将日志加入到系统日志中，您可以使用 [`logger`](https://man7.org/linux/man-pages/man1/logger.1.html) 这个 shell 程序。
 
 ```shell
 logger "Hello Logs"
@@ -187,7 +187,7 @@ print(f(10))
 
 #### 系统调用调试
 
-当您的程序需要执行一些只有操作系统内核才能完成的操作时，它需要使用 [系统调用](https://en.wikipedia.org/wiki/System_call)。有一些命令可以帮助您追踪您的程序执行的系统调用。在 Linux 中可以使用 [`strace`](http://man7.org/linux/man-pages/man1/strace.1.html) ，在 macOS 和 BSD 中可以使用 [`dtrace`](http://dtrace.org/blogs/about/)（也可以使用使用一个叫做 [`dtruss`](https://www.manpagez.com/man/1/dtruss/) 的封装使其具有和 `strace` (更多信息参考 [这里](https://8thlight.com/blog/colin-jones/2015/11/06/dtrace-even-better-than-strace-for-osx.html))类似的接口
+当您的程序需要执行一些只有操作系统内核才能完成的操作时，它需要使用 [系统调用](https://en.wikipedia.org/wiki/System_call)。有一些命令可以帮助您追踪您的程序执行的系统调用。在 Linux 中可以使用 [`strace`](https://man7.org/linux/man-pages/man1/strace.1.html) ，在 macOS 和 BSD 中可以使用 [`dtrace`](http://dtrace.org/blogs/about/)（也可以使用使用一个叫做 [`dtruss`](https://www.manpagez.com/man/1/dtruss/) 的封装使其具有和 `strace` (更多信息参考 [这里](https://8thlight.com/blog/colin-jones/2015/11/06/dtrace-even-better-than-strace-for-osx.html))类似的接口
 
 ```shell
 # On Linux
@@ -198,7 +198,7 @@ sudo dtruss -t lstat64_extended ls -l > /dev/null
 
 #### 网络数据包定位问题
 
- [`tcpdump`](http://man7.org/linux/man-pages/man1/tcpdump.1.html) 和 [Wireshark](https://www.wireshark.org/) 这样的网络数据包分析工具可以帮助您获取网络数据包的内容并基于不同的条件进行过滤。
+ [`tcpdump`](https://man7.org/linux/man-pages/man1/tcpdump.1.html) 和 [Wireshark](https://www.wireshark.org/) 这样的网络数据包分析工具可以帮助您获取网络数据包的内容并基于不同的条件进行过滤。
 
 对于 web 开发， Chrome/Firefox 的开发者工具非常方便，功能也很强大：
 
@@ -215,7 +215,7 @@ sudo dtruss -t lstat64_extended ls -l > /dev/null
 主要有两个工具:
 
 * [`pyflakes`](https://pypi.org/project/pyflakes) 
-* [`mypy`](http://mypy-lang.org/) 
+* [`mypy`](https://mypy-lang.org/) 
 * [`shellcheck`](https://www.shellcheck.net/):应用于`shell` 脚本
 
 对于代码
