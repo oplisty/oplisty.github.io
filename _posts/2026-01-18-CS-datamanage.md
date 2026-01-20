@@ -326,4 +326,39 @@ oplisty@oplistydeMacBook-Air ~ %
 - `-a`：显示完整命令行（而不是只显示进程名）
 - `-f`：匹配“完整命令行”（这样能匹配到 `sleep 10000` 这一整串）
 
-2. 
+2. **同一个bash**: 某个进程结束后再开始另外一个进程(使用 wait 命令。尝试启动这个休眠命令，然后待其结束后再执行 ls 命令。)
+
+```shell
+sleep 60 &
+pid=$! #获取pid
+wait "$pid"
+ls
+```
+
+   **不同的bash** :
+
+原理：用 `kill -0 <pid>` 做“探活”，进程存在则返回 0，不存在返回非 0。循环里 `sleep` 一下避免空转占 CPU。
+
+```shell
+pidwait () {
+  local pid="$1"
+  local interval="${2:-1}"   # 可选：轮询间隔秒，默认 1 秒
+
+  # 参数检查
+  if [[ -z "$pid" || ! "$pid" =~ ^[0-9]+$ ]]; then
+    echo "usage: pidwait <pid> [interval_seconds]" >&2
+    return 2
+  fi
+
+  # 等待：只要进程还存在就继续睡
+  while kill -0 "$pid" 2>/dev/null; do
+    sleep "$interval"
+  done
+
+  return 0
+}
+```
+
+
+
+> `kill` 命令成功退出时其状态码为 0 ，其他状态则是非 0。`kill -0` 则不会发送信号，但是会在进程不存在时返回一个不为 0 的状态码。
