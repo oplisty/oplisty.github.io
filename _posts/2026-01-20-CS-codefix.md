@@ -187,7 +187,7 @@ print(f(10))
 
 #### 系统调用调试
 
-当您的程序需要执行一些只有操作系统内核才能完成的操作时，它需要使用 [系统调用](https://en.wikipedia.org/wiki/System_call)。有一些命令可以帮助您追踪您的程序执行的系统调用。在 Linux 中可以使用 [`strace`](https://man7.org/linux/man-pages/man1/strace.1.html) ，在 macOS 和 BSD 中可以使用 [`dtrace`](http://dtrace.org/blogs/about/)（也可以使用使用一个叫做 [`dtruss`](https://www.manpagez.com/man/1/dtruss/) 的封装使其具有和 `strace` (更多信息参考 [这里](https://8thlight.com/blog/colin-jones/2015/11/06/dtrace-even-better-than-strace-for-osx.html))类似的接口
+当您的程序需要执行一些只有操作系统内核才能完成的操作时，它需要使用 [系统调用](https://en.wikipedia.org/wiki/System_call)。有一些命令可以帮助您追踪您的程序执行的系统调用。在 Linux 中可以使用 [`strace`](https://man7.org/linux/man-pages/man1/strace.1.html) ，在 macOS 和 BSD 中可以使用 [`dtrace`](https://dtrace.org/blogs/about/)（也可以使用使用一个叫做 [`dtruss`](https://www.manpagez.com/man/1/dtruss/) 的封装使其具有和 `strace` (更多信息参考 [这里](https://8thlight.com/blog/colin-jones/2015/11/06/dtrace-even-better-than-strace-for-osx.html))类似的接口
 
 ```shell
 # On Linux
@@ -308,7 +308,7 @@ print(time.time() - start)
 - 用户时间 *User* - CPU 执行用户态代码所花费的时间
 - 系统时间 *Sys* - CPU 执行内核态代码所花费的时间
 
-例如，试着写一个执行 HTTP 请求的命令，并在命令前加上 [`time`](http://man7.org/linux/man-pages/man1/time.1.html)。网络不好的情况下您可能会看到请求花费了 2 秒多才完成，但是进程仅花费了 15 毫秒的 CPU 用户时间和 12 毫秒的 CPU 内核时间。
+例如，试着写一个执行 HTTP 请求的命令，并在命令前加上 [`time`](https://man7.org/linux/man-pages/man1/time.1.html)。网络不好的情况下您可能会看到请求花费了 2 秒多才完成，但是进程仅花费了 15 毫秒的 CPU 用户时间和 12 毫秒的 CPU 内核时间。
 
 #### 性能分析工具
 
@@ -411,7 +411,7 @@ Line #    Mem usage  Increment   Line Contents
 
 ##### 事件分析
 
-在我们使用 `strace` 调试代码的时候，您可能会希望忽略一些特殊的代码并希望在分析时将其当作黑盒处理。[`perf`](http://man7.org/linux/man-pages/man1/perf.1.html) 命令将 CPU 的区别进行了抽象，它不会报告时间和内存的消耗，而是报告与您的程序相关的系统事件。
+在我们使用 `strace` 调试代码的时候，您可能会希望忽略一些特殊的代码并希望在分析时将其当作黑盒处理。[`perf`](https://man7.org/linux/man-pages/man1/perf.1.html) 命令将 CPU 的区别进行了抽象，它不会报告时间和内存的消耗，而是报告与您的程序相关的系统事件。
 
 例如，`perf` 可以报告不佳的缓存局部性（poor cache locality）、大量的页错误（page faults）或活锁（livelocks）。下面是关于常见命令的简介：
 
@@ -419,3 +419,16 @@ Line #    Mem usage  Increment   Line Contents
 - `perf stat COMMAND ARG1 ARG2` - 收集与某个进程或指令相关的事件；
 - `perf record COMMAND ARG1 ARG2` - 记录命令执行的采样信息并将统计数据储存在 `perf.data` 中；
 - `perf report` - 格式化并打印 `perf.data` 中的数据。
+
+##### 资源监控
+
+有很多很多的工具可以被用来显示不同的系统资源，例如 CPU 占用、内存使用、网络、磁盘使用等。
+
+- **通用监控** - 最流行的工具要数 [`htop`](https://htop.dev/), 了，它是 [`top`](http://man7.org/linux/man-pages/man1/top.1.html) 的改进版。`htop` 可以显示当前运行进程的多种统计信息。`htop` 有很多选项和快捷键，常见的有：`<F6>` 进程排序、 `t` 显示树状结构和 `h` 打开或折叠线程。 还可以留意一下 [`glances`](https://nicolargo.github.io/glances/) ，它的实现类似但是用户界面更好。如果需要合并测量全部的进程， [`dstat`](http://dag.wiee.rs/home-made/dstat/) 是也是一个非常好用的工具，它可以实时地计算不同子系统资源的度量数据，例如 I/O、网络、 CPU 利用率、上下文切换等等；
+- **I/O 操作** - [`iotop`](http://man7.org/linux/man-pages/man8/iotop.8.html) 可以显示实时 I/O 占用信息而且可以非常方便地检查某个进程是否正在执行大量的磁盘读写操作；
+- **磁盘使用** - [`df`](http://man7.org/linux/man-pages/man1/df.1.html) 可以显示每个分区的信息，而 [`du`](http://man7.org/linux/man-pages/man1/du.1.html) 则可以显示当前目录下每个文件的磁盘使用情况（ **d** isk **u** sage）。`-h` 选项可以使命令以对人类（**h** uman）更加友好的格式显示数据；[`ncdu`](https://dev.yorhel.nl/ncdu) 是一个交互性更好的 `du` ，它可以让您在不同目录下导航、删除文件和文件夹；
+- **内存使用** - [`free`](http://man7.org/linux/man-pages/man1/free.1.html) 可以显示系统当前空闲的内存。内存也可以使用 `htop` 这样的工具来显示；
+- **打开文件** - [`lsof`](http://man7.org/linux/man-pages/man8/lsof.8.html) 可以列出被进程打开的文件信息。 当我们需要查看某个文件是被哪个进程打开的时候，这个命令非常有用；
+- **网络连接和配置** - [`ss`](http://man7.org/linux/man-pages/man8/ss.8.html) 能帮助我们监控网络包的收发情况以及网络接口的显示信息。`ss` 常见的一个使用场景是找到端口被进程占用的信息。如果要显示路由、网络设备和接口信息，您可以使用 [`ip`](http://man7.org/linux/man-pages/man8/ip.8.html) 命令。注意，`netstat` 和 `ifconfig` 这两个命令已经被前面那些工具所代替了。
+- **网络使用** - [`nethogs`](https://github.com/raboof/nethogs) 和 [`iftop`](http://www.ex-parrot.com/pdw/iftop/) 是非常好的用于对网络占用进行监控的交互式命令行工具。
+
