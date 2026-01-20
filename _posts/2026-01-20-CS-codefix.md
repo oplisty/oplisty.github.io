@@ -429,6 +429,6 @@ Line #    Mem usage  Increment   Line Contents
 - **磁盘使用** - [`df`](https://man7.org/linux/man-pages/man1/df.1.html) 可以显示每个分区的信息，而 [`du`](https://man7.org/linux/man-pages/man1/du.1.html) 则可以显示当前目录下每个文件的磁盘使用情况（ **d** isk **u** sage）。`-h` 选项可以使命令以对人类（**h** uman）更加友好的格式显示数据；[`ncdu`](https://dev.yorhel.nl/ncdu) 是一个交互性更好的 `du` ，它可以让您在不同目录下导航、删除文件和文件夹；
 - **内存使用** - [`free`](https://man7.org/linux/man-pages/man1/free.1.html) 可以显示系统当前空闲的内存。内存也可以使用 `htop` 这样的工具来显示；
 - **打开文件** - [`lsof`](https://man7.org/linux/man-pages/man8/lsof.8.html) 可以列出被进程打开的文件信息。 当我们需要查看某个文件是被哪个进程打开的时候，这个命令非常有用；
-- **网络连接和配置** - [`ss`](https://man7.org/linux/man-pages/man8/ss.8.html) 能帮助我们监控网络包的收发情况以及网络接口的显示信息。`ss` 常见的一个使用场景是找到端口被进程占用的信息。如果要显示路由、网络设备和接口信息，您可以使用 [`ip`](http://man7.org/linux/man-pages/man8/ip.8.html) 命令。注意，`netstat` 和 `ifconfig` 这两个命令已经被前面那些工具所代替了。
+- **网络连接和配置** - [`ss`](https://man7.org/linux/man-pages/man8/ss.8.html) 能帮助我们监控网络包的收发情况以及网络接口的显示信息。`ss` 常见的一个使用场景是找到端口被进程占用的信息。如果要显示路由、网络设备和接口信息，您可以使用 [`ip`](https://man7.org/linux/man-pages/man8/ip.8.html) 命令。注意，`netstat` 和 `ifconfig` 这两个命令已经被前面那些工具所代替了。
 - **网络使用** - [`nethogs`](https://github.com/raboof/nethogs) 和 [`iftop`](https://www.ex-parrot.com/pdw/iftop/) 是非常好的用于对网络占用进行监控的交互式命令行工具。
 
