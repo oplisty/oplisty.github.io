@@ -211,3 +211,119 @@ if [[ "$(hostname)" == "myServer" ]]; then {do_something}; fi
     path = ~/.gitconfig_local
 ```
 
+### 远程服务器
+
+通过如下命令，您可以使用 `ssh` 连接到其他服务器：
+
+```
+ssh foo@bar.mit.edu
+```
+
+这里我们尝试以用户名 `foo` 登录服务器 `bar.mit.edu`。
+
+**PS**:服务器可以通过 URL 指定（`bar.mit.edu`）也可以使用 IP 指定（`foobar@192.168.1.42`）。
+
+#### 执行命令
+
+`ssh foobar@server ls` 可以直接在用 foobar 的命令下执行 `ls` 命令。 
+
+*  `ssh foobar@server ls | grep PATTERN` 会在本地查询远端 `ls` 的输出
+*  `ls | ssh foobar@server grep PATTERN` 会在远端对本地 `ls` 输出的结果进行查询。
+
+#### 免密登陆
+
+我们只需要向服务器证明客户端持有对应的私钥，而不需要公开其私钥。这样就可以避免每次登录都输入密码的麻烦了
+
+1. 使用 [`ssh-keygen`](http://man7.org/linux/man-pages/man1/ssh-keygen.1.html) 命令可以生成一对密钥：
+
+```shell
+ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519
+```
+
+**PS**：
+
+* 可以使用 [`ssh-agent`](https://www.man7.org/linux/man-pages/man1/ssh-agent.1.html) 或 [`gpg-agent`](https://linux.die.net/man/1/gpg-agent) 来给密钥设置密码
+* 如果已经有了一个可用的密钥对。要检查您是否持有密码并验证它，您可以运行 `ssh-keygen -y -f /path/to/key`.
+
+2. `ssh` 会查询 `.ssh/authorized_keys` 来确认哪些用户可以被允许登录。您可以通过下面的命令将一个公钥拷贝到这里：
+
+```shell
+cat .ssh/id_ed25519.pub | ssh foobar@remote 'cat >> ~/.ssh/authorized_keys'
+```
+
+或者
+
+```shell
+ssh-copy-id -i .ssh/id_ed25519.pub foobar@remote
+```
+
+#### 通过 SSH 复制文件
+
+- `ssh+tee`, 最简单的方法是执行 `ssh` 命令，然后通过这样的方法利用标准输入实现 `cat localfile | ssh remote_server tee serverfile`。回忆一下，[`tee`](https://www.man7.org/linux/man-pages/man1/tee.1.html) 命令会将标准输出写入到一个文件；
+
+- [`scp`](https://www.man7.org/linux/man-pages/man1/scp.1.html) ：当需要拷贝大量的文件或目录时。
+
+  语法如下：
+
+  ```shell
+  scp path/to/local_file remote_host:path/to/remote_file
+  ```
+
+- [`rsync`](https://www.man7.org/linux/man-pages/man1/rsync.1.html) 对 `scp` 进行了改进，它可以检测本地和远端的文件以防止重复拷贝。它还可以提供一些诸如符号连接、权限管理等精心打磨的功能。甚至还可以基于 `--partial` 标记实现断点续传。`rsync` 的语法和 `scp` 类似
+
+#### SSH 配置
+
+我们已经介绍了很多参数。为它们创建一个别名是个好想法，我们可以这样做：
+
+```
+alias my_server="ssh -i ~/.id_ed25519 --port 2222 -L 9999:localhost:8888 foobar@remote_server"
+```
+
+不过，更好的方法是使用 `~/.ssh/config`.
+
+```
+Host vm
+    User foobar
+    HostName 172.16.174.141
+    Port 2222
+    IdentityFile ~/.ssh/id_ed25519
+    LocalForward 9999 localhost:8888
+
+# 在配置文件中也可以使用通配符
+Host *.mit.edu
+    User foobaz
+```
+
+这么做的好处是，使用 `~/.ssh/config` 文件来创建别名，类似 `scp`、`rsync` 和 `mosh` 的这些命令都可以读取这个配置并将设置转换为对应的命令行选项。
+
+注意，`~/.ssh/config` 文件也可以被当作配置文件，而且一般情况下也是可以被导入其他配置文件的。不过，如果您将其公开到互联网上，那么其他人都将会看到您的服务器地址、用户名、开放端口等等。这些信息可能会帮助到那些企图攻击您系统的黑客，所以请务必三思。
+
+服务器侧的配置通常放在 `/etc/ssh/sshd_config`。您可以在这里配置免密认证、修改 ssh 端口、开启 X11 转发等等。 您也可以为每个用户单独指定配置。
+
+#### 杂项
+
+**高延迟国际漫游**: [Mosh](https://mosh.org/)（即 mobile shell ）对 ssh 进行了改进，它允许连接漫游、间歇连接及智能本地回显。
+
+**远端文件夹挂载到本地** :  [sshfs](https://github.com/libfuse/sshfs) 可以将远端服务器上的一个文件夹挂载到本地,，然后您就可以使用本地的编辑器了
+
+### 作业
+
+1. 通过`pgrep`和`pkill` 来查找PID并且终止进程
+
+```zsh
+oplisty@oplistydeMacBook-Air ~ % jobs
+[1]  + running    sleep 10000
+oplisty@oplistydeMacBook-Air ~ % pgrep -af "sleep 10000"
+37930
+oplisty@oplistydeMacBook-Air ~ % pkill -f "sleep 10000"
+[1]  + terminated  sleep 10000
+oplisty@oplistydeMacBook-Air ~ % jobs
+oplisty@oplistydeMacBook-Air ~ % 
+```
+
+解释：
+
+- `-a`：显示完整命令行（而不是只显示进程名）
+- `-f`：匹配“完整命令行”（这样能匹配到 `sleep 10000` 这一整串）
+
+2. 
