@@ -144,7 +144,7 @@ $ docker container prune #清理掉所有处于终止状态的容器。
 
 #### 网上拉镜像
 
-在拉镜像之前我们要知道镜像名称 我们可以选择从[Docker Hub]( **https://hub.docker.com/**) 网站搜索镜像也可以使用 docker search 命令来搜索镜像
+在拉镜像之前我们要知道镜像名称 我们可以选择从Docker Hub 网站搜索镜像也可以使用 docker search 命令来搜索镜像
 
 ```shell
 runoob@runoob:~$ docker search httpd
