@@ -49,7 +49,7 @@ Idea2:先下采样然后再上采样来keep shape
 
 **可学习的版本**: 反卷积(Transpose Convolution)
 
-  ![figure1]({{ "/assets/img/transposeconvolution.png" | relative_url }})
+  ![figure1]({{ "/assets/img/transposed convolution.png" | relative_url }})
 
 #### 思路三: U-Net
 
@@ -83,13 +83,17 @@ computationally expensive!
 
 proposals in a few seconds on CPU
 
+![figure1]({{ "/assets/img/regionproposal1.png" | relative_url }})
 
+![figure1]({{ "/assets/img/regionproposal2.png" | relative_url }})
 
 #### 思路三: R-CNN
 
 Rich feature hierarchies for accurate object detection and semantic segmentation(**CVPR 2014**)
 
+![figure1]({{ "/assets/img/RCNN.png" | relative_url }})
 
+![figure1]({{ "/assets/img/FastCNN.png" | relative_url }})
 
 ### Modern Method
 
@@ -97,11 +101,13 @@ Rich feature hierarchies for accurate object detection and semantic segmentation
 
 #### Yolo(CVPR 2016)
 
+![figure1]({{ "/assets/img/yolo.png" | relative_url }})
 
+![figure1]({{ "/assets/img/yolo2.png" | relative_url }})
 
 #### DETR:Object Detection with Transformers(ECCV 2020)
 
-
+![figure1]({{ "/assets/img/DETR.png" | relative_url }})
 
 
 
