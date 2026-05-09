@@ -55,7 +55,7 @@ Experience
 </div>
 
 
-Publications
+<!-- Publications
 --------------
 <button class="pub-button active" onclick="filterPublications(event, 'all')">Core Publications</button>
 <button class="pub-button" onclick="filterPublications(event, 'list')">Full Publications List</button>
@@ -249,6 +249,7 @@ Publications
 
 <script src="assets/js/show_publications.js"></script>
 <script src="assets/js/pub_media_rotator.js"></script>
+-->
 
 
 Projects
@@ -259,12 +260,11 @@ Projects
       <img src="images/2.png" alt="WowPage" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
     </div>
     <div> 
-      <strong>WowPage</strong><br>
+      <strong>HW4openclass</strong><br>
       <i style="font-size: 13px;">
-        <a href="https://wd7ang.github.io" target="_blank"><strong>Weidong Tang</strong></a>,
-        <a href="https://selen-suyue.github.io/" target="_blank"><strong>Yue Su</strong></a>.
+        <a href="https://oplisty.github.io/" target="_blank"><strong>Zepeng Lin</strong></a>.
       </i><br>
-      In collaboration with Yue Su, I refined and improved his original homepage template. A clean standalone template version is coming soon.
+      Summary of answers to publicly available foreign courses that have been studied.
       <br> 
       <b><i style="color:#83a1c7;">Project &nbsp;</i></b> 
       <a href=""><em>[code]</em></a> 
