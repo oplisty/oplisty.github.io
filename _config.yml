@@ -1,7 +1,7 @@
 locale                   : "en-US"
-title                    : "WowPage"
+title                    : "Oplisty 的研究空间"
 title_separator          : "-"
-name                     : "Your Name"
+name                     : "Zepeng Lin"
 description              : &description "A clean academic homepage template."
 url                      : ""
 baseurl                  : ""
@@ -9,16 +9,16 @@ repository               : ""
 
 author:
   avatar           : "1.png"
-  name             : "Your Name"
+  name             : "Zepeng Lin"
   pronouns         :
-  bio              : "Student and researcher."
-  location         : "City, Country"
-  employer         : "Institution or Company"
+  bio              : "Sophomore at South China University of Technology, diving into the research of Embodied AI, especially focusing on how to narrow down the sim-to-real gap and scale up simulation data for robotic learning."
+  location         : "GuangZhou, China"
+  employer         : "South China University of Technology"
   uri              :
-  email            : "name@example.com"
+  email            : "linzepeng697@gmail.com"
 
-  arxiv            :
-  googlescholar    :
+  arxiv            : 
+  googlescholar    : 
   impactstory      :
   orcid            :
   semantic         :
