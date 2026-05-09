@@ -267,7 +267,7 @@ Projects
       Summary of answers to publicly available foreign courses that have been studied.
       <br> 
       <b><i style="color:#83a1c7;">Project &nbsp;</i></b> 
-      <a href=""><em>[code]</em></a> 
+      <a href="https://github.com/oplisty/HW4openclass"><em>[code]</em></a> 
     </div>
   </div> 
 </div>
