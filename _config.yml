@@ -155,6 +155,9 @@ kramdown:
   enable_coderay: false
 
 collections:
+  blog:
+    output: true
+    permalink: /blog/:path/
   teaching:
     output: true
     permalink: /:collection/:path/
@@ -185,6 +188,14 @@ defaults:
     values:
       layout: single
       author_profile: true
+  - scope:
+      path: ""
+      type: blog
+    values:
+      layout: single
+      author_profile: true
+      share: true
+
   - scope:
       path: ""
       type: teaching
