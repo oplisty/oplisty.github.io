@@ -33,6 +33,16 @@ Experience
 <div class="experience-container">
 
   <div class="experience-card">
+      <img src="images/lightwheel.png" alt="Lightwheel ai logo" class="experience-logo">
+      <div class="experience-info">
+          <strong>Lightwheel AI</strong><br>
+          <em>2026.03 - Present</em><br>
+          Robotic Learning Intern cooperate with <a href="https://yuechen0614.github.io/"><em>Yue Chen</em></a><br>
+          <span style="color:#888;">Main contribution: Responsible for building the simulation infra and training mobile operation end-to-end VLA.</span>
+      </div>
+  </div>
+
+  <div class="experience-card">
       <img src="images/pku.png" alt="Peking University logo" class="experience-logo">
       <div class="experience-info">
           <strong>Peking University</strong><br>
