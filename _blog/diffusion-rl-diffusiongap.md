@@ -1,6 +1,5 @@
 ---
-
-## title: "Diffusion-RL 复习（二）：Diffusion RL 的困难与现有解决方法"
+title: "Diffusion-RL 复习（二）：Diffusion RL 的困难与现有解决方法"
 date: 2026-05-22
 excerpt: "整理 Diffusion RL 中概率计算困难的来源，以及当前主流方法如何通过逐步转移建模来绕开这一问题。"
 cover: "/images/3.jpg"
@@ -16,6 +15,7 @@ tags:
   - SDE-Solver
 math: true
 read_time: true
+---
 
 在复习完 DPO、PPO 和 GRPO 等强化学习算法后，可以进一步分析 **Diffusion RL** 的核心难点。本文重点讨论：为什么在 LLM 中常见的强化学习做法很难直接迁移到 diffusion model 上，以及现有工作通常如何绕开这个问题。
 

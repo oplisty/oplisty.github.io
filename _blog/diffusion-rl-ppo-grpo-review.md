@@ -1,12 +1,10 @@
 ---
 
-## title: "Diffusion-RL 复习（一）：PPO 与 GRPO"
-
+title: "Diffusion-RL 复习（一）：PPO 与 GRPO"
 date: 2026-05-22
 excerpt: "复习 Diffusion-RL 相关基础知识，整理 PPO 与 GRPO 的核心思想、公式和训练流程。"
 cover: "/images/3.jpg"
 categories:
-
 - Reinforcement-Learning
 - Diffusion
 tags:
@@ -16,7 +14,7 @@ tags:
 - Policy-Gradient
 math: true
 read_time: true
-
+---
 
 
 ## 目录
