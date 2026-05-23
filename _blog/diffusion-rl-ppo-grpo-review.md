@@ -1,21 +1,23 @@
 ---
 
 ## title: "Diffusion-RL 复习（一）：PPO 与 GRPO"
+
 date: 2026-05-22
 excerpt: "复习 Diffusion-RL 相关基础知识，整理 PPO 与 GRPO 的核心思想、公式和训练流程。"
-cover: "/images/2.png"
+cover: "/images/3.jpg"
 categories:
-  - Reinforcement-Learning
-  - Diffusion
+
+- Reinforcement-Learning
+- Diffusion
 tags:
-  - PPO
-  - GRPO
-  - Diffusion-RL
-  - Policy-Gradient
+- PPO
+- GRPO
+- Diffusion-RL
+- Policy-Gradient
 math: true
 read_time: true
 
-> 原始 PDF 中第 1 页为空白，第 2 页主要是 PPO 笔记，第 3 页只有“GRPO 算法”标题。本文将相关内容整理并合并为一篇适合 GitHub Pages / Jekyll 渲染的 Markdown 笔记。
+
 
 ## 目录
 
@@ -210,19 +212,19 @@ $$
 
 强化学习真正想最大化的是新策略下的期望回报：
 
-$$
-J(\theta) = \mathbb{E}*{\tau \sim \pi*\theta}[R(\tau)]
+$$  
+J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}[R(\tau)]  
 $$
 
 策略梯度定理给出：
 
-$$
-\nabla_\theta J(\theta) =
-\mathbb{E}*{s_t, a_t \sim \pi*\theta}
-\left[
-\nabla_\theta \log \pi_\theta(a_t \mid s_t)
-A^{\pi_\theta}(s_t, a_t)
-\right]
+$$  
+\nabla_\theta J(\theta) =  
+\mathbb{E}_{s_t, a_t \sim \pi_\theta}  
+\left[  
+\nabla_\theta \log \pi_\theta(a_t \mid s_t)  
+A^{\pi_\theta}(s_t, a_t)  
+\right]  
 $$
 
 也就是说：
@@ -247,8 +249,8 @@ $$
 固定状态 $s_t$ 时，有：
 
 $$
-\mathbb{E}*{a_t \sim \pi*\theta}[f(a_t)] =
-\mathbb{E}*{a_t \sim \pi*{\text{old}}}
+\mathbb{E}_{a_t \sim \pi_\theta}[f(a_t)] =
+\mathbb{E}_{a_t \sim \pi_{\text{old}}}
 \left[
 \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\text{old}}(a_t \mid s_t)} f(a_t)
 \right]
@@ -514,7 +516,7 @@ $$
 
 完整目标可以写成：
 
-## $$
+$$
 J_{\text{GRPO}}(\theta) =
 \mathbb{E}
 \left[
@@ -525,7 +527,7 @@ J_{\text{GRPO}}(\theta) =
 r_i(\theta)A_i,
 \operatorname{clip}(r_i(\theta), 1-\epsilon, 1+\epsilon)A_i
 \right)
-
+-
 \beta D_{\mathrm{KL}}(\pi_\theta \Vert \pi_{\text{ref}})
 \right]
 $$
@@ -587,31 +589,4 @@ GRPO 的训练流程可以总结为：
    $$
 
 ---
-
-### 9. PPO 与 GRPO 对比
-
-
-| 项目                  | PPO                          | GRPO                 |
-| ------------------- | ---------------------------- | -------------------- |
-| Advantage 来源        | $Q(s_t, a_t) - V(s_t)$ 或 GAE | 组内 reward 相对值        |
-| 是否需要 value function | 需要                           | 不需要                  |
-| Baseline            | $V(s)$                       | 同组平均 reward $\bar r$ |
-| 样本形式                | 环境轨迹                         | 同一 prompt 下的多个回答     |
-| 稳定机制                | ratio clip + KL 监控或惩罚        | ratio clip + KL 惩罚   |
-| 适合场景                | 通用 RL / RLHF                 | LLM 推理、数学、代码等可验证任务   |
-
-
----
-
-### 10. 一句话总结
-
-GRPO 可以理解为：
-
-$$
-\text{GRPO} = \text{PPO} - \text{Value Model} + \text{Group Relative Advantage}
-$$
-
-也就是说：
-
-> GRPO 用同一个 prompt 下多个回答的组内相对 reward 来构造 advantage，从而省掉 value function，同时仍然保留 PPO 的 probability ratio、clip 和 KL 惩罚来保证训练稳定。
 
