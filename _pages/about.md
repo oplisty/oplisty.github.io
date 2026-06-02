@@ -270,7 +270,7 @@ Projects
       <img src="images/3.jpg" alt="GraphRL-Fleet" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
     </div>
     <div> 
-      <strong>HW4openclass</strong><br>
+      <strong>GraphRL-Fleet</strong><br>
       <i style="font-size: 13px;">
         <a href="https://oplisty.github.io/" target="_blank"><strong>Zepeng Lin</strong></a>, Guanyu Xin, Yuxuan Xue.
       </i><br>
