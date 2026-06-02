@@ -184,7 +184,7 @@ $$
 d x =
 \left[
 f(x,t)
-------
+-
 
 \frac{1}{2} g(t)^2
 \nabla_x \log p_t(x)
@@ -204,9 +204,7 @@ $$
 $$
 \nabla_{x_t} \log p_t(x_t)
 \approx
--------
-
-\frac{\epsilon_\theta(x_t,t)}{\sigma_t}
+-\frac{\epsilon_\theta(x_t,t)}{\sigma_t}
 $$
 
 这样一来，采样过程就可以从随机微分方程转化为确定性的常微分方程求解问题。
@@ -260,7 +258,7 @@ $$
 \frac{i}{N-1}
 \left(
 \sigma_{\min}^{1/\rho}
-----------------------
+-
 
 \sigma_{\max}^{1/\rho}
 \right)
@@ -313,5 +311,4 @@ Diffusion 的核心优势在于，它把复杂的生成问题拆解成了多个�
 
 下一节，我们将正式回顾 2022-2024 年间 few-step diffusion distillation 的代表性方法，看看它们是如何一步步突破采样步数限制的。
 
-```
-```
+
