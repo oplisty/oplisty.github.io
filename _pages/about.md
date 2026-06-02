@@ -267,6 +267,24 @@ Projects
 <div class="project-card" data-category="project"> 
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
+      <img src="images/3.jpg" alt="HW4openclass" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
+    </div>
+    <div> 
+      <strong>HW4openclass</strong><br>
+      <i style="font-size: 13px;">
+        <a href="https://oplisty.github.io/" target="_blank"><strong>Zepeng Lin</strong></a>, Guanyu Xin, Yuxuan Xue.
+      </i><br>
+     A research-oriented repository for dynamic scheduling of new energy logistics fleets, featuring a graph-based simulation engine, Guangzhou Panyu district real road-network data, online heuristic and Q-learning policies, an offline MILP baseline, a FastAPI backend, and a web visualization frontend.
+      <br> 
+      <b><i style="color:#83a1c7;">Project &nbsp;</i></b> 
+      <a href="https://github.com/oplisty/GraphRL-Fleet.git"><em>[code]</em></a> 
+    </div>
+  </div> 
+</div>
+
+<div class="project-card" data-category="project"> 
+  <div style="display: flex; align-items: center;">
+    <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
       <img src="images/2.png" alt="WowPage" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
     </div>
     <div> 
