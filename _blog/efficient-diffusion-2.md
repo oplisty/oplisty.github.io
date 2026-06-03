@@ -32,7 +32,7 @@ read_time: true
 
 **算法流程**
 
-设教师模型为 $\hat{x}_\eta(z_t)$，学生模型为 $\hat{x}_\theta(z_t)$，初始化 $\theta \leftarrow \eta$。每轮蒸馏的核心步骤为：
+设教师模型为 $\hat{x}_{\eta}(z_t)$，学生模型为 $\hat{x}_{\theta}(z_t)$，初始化 $\theta \leftarrow \eta$。每轮蒸馏的核心步骤为：
 
 1. 采样 $t \sim \mathcal{U}[0, 1]$，对干净样本 $x$ 加噪得 $z_t = \alpha_t x + \sigma_t \epsilon$
 2. 用教师执行 2 步 DDIM 去噪：
