@@ -28,13 +28,13 @@ read_time: true
 
 承接上文的传统加速方法，本节进入「蒸馏时代」的开篇之作 —— Progressive Distillation（Salimans & Ho, 2022）。
 
-**核心思想**：让学生模型用 1 步去近似教师模型 2 步的输出，然后让训练好的学生成为新的教师，如此递归。每次迭代将采样步数减半，经过 $K$ 轮后，原本需要 $N$$ 步的采样可压缩到 $N/2^K$$ 步。
+**核心思想**：让学生模型用 1 步去近似教师模型 2 步的输出，然后让训练好的学生成为新的教师，如此递归。每次迭代将采样步数减半，经过 $K$ 轮后，原本需要 $N$ 步的采样可压缩到 $N/2^K$ 步。
 
 **算法流程**
 
-设教师模型为 $\hat{x}_\eta(z_t)$，学生模型为 $\hat{x}_\theta(z_t)$，初始化 $\theta \leftarrow \eta$。每轮蒸馏的核心步骤为：
+设教师模型为 $ \hat{x}_{z_t}$，学生模型为 $\hat{x}_\theta(z_t)$，初始化 $\theta \leftarrow \eta$。每轮蒸馏的核心步骤为：
 
-1. 采样 $t \sim \mathcal{U}[0, 1]$，对干净样本 $x$ 加噪得 $$z_t = \alpha_t x + \sigma_t \epsilon$$
+1. 采样 $t \sim \mathcal{U}[0, 1]$，对干净样本 $x$ 加噪得 $z_t = \alpha_t x + \sigma_t \epsilon$
 2. 用教师执行 2 步 DDIM 去噪：
 
 $$z_{t'} = \alpha_{t'} \hat{x}_\eta(z_t) + \frac{\sigma_{t'}}{\sigma_t}\bigl(z_t - \alpha_t \hat{x}_\eta(z_t)\bigr)$$
