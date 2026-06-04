@@ -1,6 +1,5 @@
-pin jin
-
-## title: "Efficient Diffusion（三）：Consistency Model 与 Distribution Matching Distillation"
+---
+title: "Efficient Diffusion（三）：Consistency Model 与 Distribution Matching Distillation"
 
 date: 2026-05-28
 excerpt: "深入讲解 Consistency Model 的自洽性原理与两种训练范式（CD/CT），以及 DMD 如何从分布匹配视角绕开轨迹蒸馏的固有困难。"
@@ -17,7 +16,7 @@ tags:
 - Distribution-Matching
 math: true
 read_time: true
-
+---
 书接上文，Progressive Distillation 通过多轮 2-to-1 蒸馏将采样步数指数级压缩，但它仍然需要反复调用教师模型，训练成本不低。2023 年，两个重要的新方向出现了：Consistency Model 提出用"自洽性"替代逐步蒸馏，而 DMD 则从分布匹配的角度彻底跳出了轨迹蒸馏的框架。本文将分别讲解这两种方法的核心思想。
 
 ## 目录
