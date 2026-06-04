@@ -1,7 +1,7 @@
 ---
 title: "Efficient Diffusion（三）：Consistency Model 与 Distribution Matching Distillation"
 
-date: 2026-05-28
+date: 2026-06-03
 excerpt: "深入讲解 Consistency Model 的自洽性原理与两种训练范式（CD/CT），以及 DMD 如何从分布匹配视角绕开轨迹蒸馏的固有困难。"
 cover: "/images/Efficient_diffusion.jpg"
 categories:
@@ -56,13 +56,13 @@ $$
 
 它将 PF-ODE 轨迹上任意一点 $x_t$ 直接映射为对应的干净样本 $x_0$。这个函数需要满足两个条件：
 
-1. **边界条件**：当 $t = 0$ 时，输入已经是干净样本，函数应该退化为恒等映射
+3. **边界条件**：当 $t = 0$ 时，输入已经是干净样本，函数应该退化为恒等映射
 
 $$
 f(x_0, 0) = x_0.
 $$
 
-1. **自洽性条件**：对于同一条 PF-ODE 轨迹上的任意两点 $(x_t, t)$ 和 $(x_{t'}, t')$，它们的映射结果应该相同
+4. **自洽性条件**：对于同一条 PF-ODE 轨迹上的任意两点 $(x_t, t)$ 和 $(x_{t'}, t')$，它们的映射结果应该相同
 
 $$
 f(x_t, t) = f(x_{t'}, t'), \quad \forall\ t, t' \in [0, T].
@@ -103,7 +103,7 @@ $$
 x_{t_n} = x_0 + t_n \varepsilon.
 $$
 
-1. 用 Teacher 沿 PF-ODE 做一步 Euler 推进，得到轨迹上相邻的下一个点 $x_{t_{n+1}}$：
+2. 用 Teacher 沿 PF-ODE 做一步 Euler 推进，得到轨迹上相邻的下一个点 $x_{t_{n+1}}$：
 
 $$
 x_{t_{n+1}} = x_{t_n} + (t_{n+1} - t_n) \cdot \frac{x_{t_n} - D_\phi(x_{t_n}, t_n)}{t_n}.
@@ -111,10 +111,10 @@ $$
 
 确保 $x_{t_n}$ 和 $x_{t_{n+1}}$ 落在同一条 PF-ODE 轨迹上。取相邻离散点主要就是为了Euler 近似的局部误差可控。
 
-1. 对 $(x_{t_n}, t_n)$ 和 $(x_{t_{n+1}}, t_{n+1})$ 这对轨迹上的相邻点施加自洽性约束，计算损失并更新 $\theta$：
+3. 对 $(x_{t_n}, t_n)$ 和 $(x_{t_{n+1}}, t_{n+1})$ 这对轨迹上的相邻点施加自洽性约束，计算损失并更新 $\theta$：
 
 $$
-\mathcal{L}*{\text{CD}}(\theta) = \mathbb{E}*{x_0, n, \varepsilon} \Bigl[ d\bigl( f_\theta(x_{t_n}, t_n), f_{\theta^-}(x_{t_{n+1}}, t_{n+1}) \bigr) \Bigr],
+\mathcal{L}_{\text{CD}}(\theta) = \mathbb{E}_{x_0, n, \varepsilon} \Bigl[ d\bigl( f_\theta(x_{t_n}, t_n), f_{\theta^-}(x_{t_{n+1}}, t_{n+1}) \bigr) \Bigr],
 $$
 
 其中 $d(\cdot, \cdot)$ 是距离度量，采用 Pseudo-Huber 损失：
@@ -148,7 +148,7 @@ $$
 也就是说，$x_{t_n}$ 和 $x_{t_{n+1}}$ 天然来自同一条轨迹的两个时刻，它们应当被映射到同一个 $x_0$。因此 CT 的损失可以定义为：
 
 $$
-\mathcal{L}*{\text{CT}}(\theta) = \mathbb{E}*{x_0, n, \varepsilon} \Bigl[ d\bigl( f_\theta(x_0 + t_{n+1} \varepsilon, t_{n+1}), f_{\theta^-}(x_0 + t_n \varepsilon, t_n) \bigr) \Bigr].
+\mathcal{L}_{\text{CT}}(\theta) = \mathbb{E}_{x_0, n, \varepsilon} \Bigl[ d\bigl( f_\theta(x_0 + t_{n+1} \varepsilon, t_{n+1}), f_{\theta^-}(x_0 + t_n \varepsilon, t_n) \bigr) \Bigr].
 $$
 
 与 CD 的区别仅在于相邻点的构造方式——不需要 Teacher 做 PF-ODE 步，直接用噪声注入，因此是一个**无偏估计**。但代价是方差更大：Teacher 的 Euler 步提供了 PF-ODE 的确定性信息，是低方差的；而直接噪声注入隐含了 PF-ODE 的假设（同一噪声意味着同一轨迹），其随机性更高。Consistency Model 也支持**多步精炼**：先从 $x_T$ 得到 $x_0$，再加噪声回到某个中间时间步 $t'$，再做一次一致性映射。每次精炼可以修复前一步的残留误差。经过 2-4 步精炼后，Consistency Model 通常能达到与原始多步扩散模型非常接近的质量。
@@ -168,7 +168,7 @@ $$
 DMD（Distribution Matching Distillation, Yin et al., 2024）正是从这一角度出发的方法。它直接最小化学生分布 $p_{\text{fake}}$ 与教师分布 $p_{\text{real}}$ 之间的 KL 散度：
 
 $$
-\mathcal{L}*{\text{DMD}} = D*{\text{KL}}(p_{\text{fake}}｜p_{\text{real}}).  
+\mathcal{L}_{\text{DMD}} = D_{\text{KL}}(p_{\text{fake}}｜p_{\text{real}}).  
 $$
 
 这里 $p_{\text{fake}}$ 是学生生成器 $G_\theta$ 将噪声 $z \sim \mathcal{N}(0, I)$ 映射为数据 $x = G_\theta(z)$ 后得到的分布，$p_{\text{real}}$ 是教师扩散模型经过完整多步采样后产生的分布（在实践中通常近似为目标数据分布 $p_{\text{data}}$）。
@@ -186,13 +186,13 @@ $$
 将 KL 散度用生成器重写：
 
 $$
-D_{\text{KL}}(p_{\text{fake}}  p_{\text{real}}) = \mathbb{E}*{z \sim \mathcal{N}(0,I)} \Bigl[ \log p*{\text{fake}}(G_\theta(z)) - \log p_{\text{real}}(G_\theta(z)) \Bigr].
+ D_{\text{KL}}(p_{\text{fake}} p_{\text{real}}) = \mathbb{E}_{z \sim \mathcal{N}(0,I)} \Bigl[ \log p_{\text{fake}}(G_\theta(z)) - \log p_{\text{real}}(G_\theta(z)) \Bigr]. 
 $$
 
 对 $\theta$ 求梯度，应用链式法则 $\nabla_\theta \log p(G_\theta(z)) = \nabla_x \log p(x) \cdot \nabla_\theta G_\theta(z)$：
 
 $$
-\nabla_\theta D_{\text{KL}} = \mathbb{E}*{z} \Bigl[ \bigl( \underbrace{\nabla_x \log p*{\text{fake}}(x)}*{s*{\text{fake}}(x)} - \underbrace{\nabla_x \log p_{\text{real}}(x)}*{s*{\text{real}}(x)} \bigr) \cdot \nabla_\theta G_\theta(z) \Bigr],
+ \nabla_\theta D_{\text{KL}} = \mathbb{E}_{z} \Bigl[ \bigl( \underbrace{\nabla_x \log p_{\text{fake}}(x)}_{s_{\text{fake}}(x)} - \underbrace{\nabla_x \log p_{\text{real}}(x)}_{s_{\text{real}}(x)} \bigr) \cdot \nabla_\theta G_\theta(z) \Bigr], 
 $$
 
 其中 $x = G_\theta(z)$，$s(x) \equiv \nabla_x \log p(x)$ 是 score function——它指向概率密度增长最快的方向，本质上是"最优去噪方向"。到目前为止，这是精确的链式求导，没有近似。
@@ -212,7 +212,7 @@ $$
 关键性质：当 $t \to 0$ 时，$p_t \to p$ 且 $s(x_t, t) \to s(x)$。通过在 $t \in [0, T]$ 上积分不同噪声水平的 score，可以得到干净空间梯度的加权表示：
 
 $$
-\nabla_\theta D_{\text{KL}} = \mathbb{E}*{z, t, \varepsilon} \Bigl[ w(t) \bigl( s*{\text{fake}}(x_t, t) - s_{\text{real}}(x_t, t) \bigr) \cdot \nabla_\theta G_\theta(z) \Bigr],
+ \nabla_\theta D_{\text{KL}} = \mathbb{E}_{z, t, \varepsilon} \Bigl[ w(t) \bigl( s_{\text{fake}}(x_t, t) - s_{\text{real}}(x_t, t) \bigr) \cdot \nabla_\theta G_\theta(z) \Bigr], 
 $$
 
 其中 $w(t)$ 是与 noise schedule 相关的权重函数。这一步的本质是用 diffusion 的平滑性质，把不可直接计算的高维密度梯度转化为可计算的带噪 score 之差的积分。
