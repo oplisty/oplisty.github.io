@@ -1,5 +1,4 @@
 ---
-
 title: "Efficient Diffusion（一）：从多步采样到 Few-Step 生成"
 date: 2026-05-22
 excerpt: "复习 Efficient Diffusion 相关基础知识，梳理 Diffusion 为什么需要多步采样，以及传统采样加速方法的核心思想与局限。"
@@ -18,8 +17,6 @@ tags:
 math: true
 read_time: true
 ---
-
-
 本系列想重点回顾一下 **few-step diffusion** 的发展历史。
 
 众所周知，Diffusion Model 能够生成十分精美的图像和视频。与此同时，World Model 的发展也在很大程度上受到了 Diffusion 的影响。虽然 Diffusion 未必就是未来的最终答案，但至少在当前阶段，它依然是视觉生成和世界建模中最重要的技术路线之一。

@@ -50,6 +50,8 @@ read_time: true
 - [sCM 的核心改进](#scm-的核心改进)
 
 - [从 sCM 到 sCM2](#从-scm-到-scm2)
+
+
 ## Score identity Distillation (SiD)
 ### DMD 的痛点：假 score 模型
 
