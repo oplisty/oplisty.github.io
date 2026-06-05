@@ -1,0 +1,19 @@
+---
+title: "Efficient Diffusion（四）：SiD、ECT 与连续时间一致性模型"
+date: 2026-06-05
+excerpt: "2024 年 DMD 与 Consistency Model 的关键改进：Score identity Distillation 用恒等式消去假 score 模型，ECT 让 CT 稳定可训，sCM 将一致性模型推向连续时间极限。"
+cover: "/images/Efficient_diffusion.jpg"
+categories:
+  - Diffusion
+tags:
+  - Diffusion
+  - Efficient-Diffusion
+  - Few-Step
+  - SiD
+  - ECT
+  - sCM
+  - Consistency-Model
+  - DMD
+math: true
+read_time: true
+---
