@@ -27,7 +27,7 @@ News
   </ul>
 </div>
 
-Experience
+Research Experience
 --------------
 
 <div class="experience-container">
@@ -39,16 +39,6 @@ Experience
           <em>2026.07 - Present</em><br>
           Robotic Learning Intern cooperate with <a href="https://songwxuan.github.io/"><em>Wengxuan Song</em></a><br>
           <span style="color:#888;">Main contribution: Responsible for generating large-scale robot memory datasets and contributing to the pretraining of robotic memory capabilities. Also led the design of a benchmark to evaluate the error-recovery capabilities of Vision-Language-Action (VLA) models in mobile manipulation tasks.</span>
-      </div>
-  </div>
-
-  <div class="experience-card">
-      <img src="images/lightwheel.png" alt="Lightwheel ai logo" class="experience-logo">
-      <div class="experience-info">
-          <strong>Lightwheel AI</strong><br>
-          <em>2026.03 - 2026.07</em><br>
-          Robotic Learning Intern cooperate with <a href="https://yuechen0614.github.io/"><em>Yue Chen</em></a><br>
-          <span style="color:#888;">Main contribution: Responsible for building the simulation infra and training mobile operation end-to-end VLA.</span>
       </div>
   </div>
 
@@ -69,6 +59,24 @@ Experience
           <em>2025.04 - 2026.03</em><br>
           Robotic Learning Intern advised by <a href="https://zhuanghp.github.io/"><em>Huiping Zhuang</em></a><br>
           <span style="color:#888;">Research on Embodied AI and robotic learning.</span>
+      </div>
+  </div>
+
+</div>
+
+
+Industry Experience
+--------------
+
+<div class="experience-container">
+
+  <div class="experience-card">
+      <img src="images/lightwheel.png" alt="Lightwheel ai logo" class="experience-logo">
+      <div class="experience-info">
+          <strong>Lightwheel AI</strong><br>
+          <em>2026.03 - 2026.07</em><br>
+          Robotic Learning Intern cooperate with <a href="https://yuechen0614.github.io/"><em>Yue Chen</em></a><br>
+          <span style="color:#888;">Main contribution: Responsible for building the simulation infra and training mobile operation end-to-end VLA.</span>
       </div>
   </div>
 
