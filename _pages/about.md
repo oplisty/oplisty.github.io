@@ -285,6 +285,21 @@ Projects
 <div class="project-card" data-category="project"> 
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
+      <img src="images/autodatagen.png" alt="AutoDataGen" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
+    </div>
+    <div> 
+      <strong>AutoDataGen</strong><br>
+      Responsible for adapting curobo to different robots and generating simulation data for mobile manipulation robots, including curobo and IK adaptation for various mobile-base robots (e.g., G1, X7s) and development of corresponding adapters. Built IsaacLab gym environments and wrote environment registration code for different robots, covering three actuation modes (e.g., absolute and relative joint-angle control). Also fixed the IsaacLab platform bug where PhysX and USD misalignment caused curobo collision-avoidance failures.
+      <br> 
+      <b><i style="color:#83a1c7;">Project &nbsp;</i></b> 
+      <a href="https://github.com/LightwheelAI/AutoDataGen/"><em>[code]</em></a> 
+    </div>
+  </div> 
+</div>
+
+<div class="project-card" data-category="project"> 
+  <div style="display: flex; align-items: center;">
+    <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
       <img src="images/3.jpg" alt="GraphRL-Fleet" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
     </div>
     <div> 
@@ -317,6 +332,7 @@ Projects
     </div>
   </div> 
 </div>
+
 
 
 Awards
