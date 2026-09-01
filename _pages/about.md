@@ -280,6 +280,32 @@ Industry Experience
 -->
 
 
+Publications
+--------------
+<div id="publications">
+<div class="publication-card">
+  <div style="display: flex; align-items: center;">
+    <div class="pub-media-rotator" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
+      <img src="images/coco/teaser_mk1.png" alt="CoCo teaser figure" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
+    </div>
+    <div>
+      <strong>CoCo: Code as CoT for Text-to-Image Preview and Rare Concept Generation</strong><br>
+      <i style="font-size: 13px;">
+        Haodong Li, Chunmei Qing, Huanyu Zhang, Dongzhi Jiang, Yihang Zou, Hongbo Peng, Dingming Li, Yuhong Dai,
+        <a href="https://oplisty.github.io/" target="_blank"><strong>ZePeng Lin</strong></a>,
+        Juanxi Tian, Yi Zhou, Siqi Dai, Jingwei Wu, Pheng-Ann Heng.
+      </i><br>
+      We propose a code-driven reasoning framework that renders executable scene layouts as deterministic visual drafts before refining them into high-fidelity text-to-image results. We also introduce CoCo-10K for learning structured draft-to-final image refinement.
+      <br>
+      <b><i style="color:#83a1c7;">ECCV 2026 (Accepted) &nbsp;</i></b>
+      <a href="https://arxiv.org/abs/2603.08652" target="_blank"><em>[arXiv]</em></a>
+      <a href="https://arxiv.org/pdf/2603.08652" target="_blank"><em>[PDF]</em></a>
+    </div>
+  </div>
+</div>
+</div>
+
+
 Projects
 --------
 <div class="project-card" data-category="project"> 
