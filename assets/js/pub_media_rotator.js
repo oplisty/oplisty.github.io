@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initRotators = () => {
   const rotators = document.querySelectorAll('.pub-media-rotator');
 
   rotators.forEach((rotator) => {
@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     items = items.filter((el) => {
       if (el.tagName !== 'VIDEO') return true;
+      const srcAttr = el.getAttribute('src');
       const source = el.querySelector('source');
-      const src = source ? source.getAttribute('src') : '';
+      const src = srcAttr || (source ? source.getAttribute('src') : '');
       return Boolean(src && src.trim());
     });
 
@@ -111,4 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
     show(idx);
     scheduleNext();
   });
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initRotators);
+} else {
+  initRotators();
+}

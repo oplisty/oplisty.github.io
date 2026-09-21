@@ -312,6 +312,7 @@ Projects
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
       <img src="images/autodatagen.png" alt="AutoDataGen" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
+      <video src="downloads/autodatagen.mp4" muted playsinline style="width: 320px; height: 180px; object-fit: contain; margin: 0 auto;"></video>
     </div>
     <div> 
       <strong>AutoDataGen</strong><br>
@@ -326,7 +327,7 @@ Projects
 <div class="project-card" data-category="project"> 
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
-      <img src="images/3.jpg" alt="GraphRL-Fleet" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
+      <video src="downloads/graphrl-fleet.mp4" autoplay muted loop playsinline style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;"></video>
     </div>
     <div> 
       <strong>GraphRL-Fleet</strong><br>
@@ -377,3 +378,5 @@ Services
 Talks
 --------
 - 
+
+<script src="/assets/js/pub_media_rotator.js"></script>
