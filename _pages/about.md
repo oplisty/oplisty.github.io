@@ -303,6 +303,44 @@ Publications
     </div>
   </div>
 </div>
+
+<div class="publication-card">
+  <div style="display: flex; align-items: center;">
+    <div class="pub-media-rotator" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
+      <div style="width: 320px; height: 180px; background: #f0f2f5; display: flex; align-items: center; justify-content: center; color: #98a2b3; font-size: 13px;">Teaser figure coming soon</div>
+    </div>
+    <div>
+      <strong>Stable World: Reinforcement Learning for Action-Conditioned World Model for Stable Embodied Simulation</strong><br>
+      <i style="font-size: 13px;">
+        Haobo Li, Yanhong Zeng, Zeyu Lou,
+        <a href="https://oplisty.github.io/" target="_blank"><strong>ZePeng Lin</strong></a>,
+        Haoran Qian, Qin Zhao, Zhihao Xie, Zipeng Zhang.
+      </i><br>
+      An action-conditioned world model trained with reinforcement learning to keep embodied simulation stable.
+      <br>
+      <b><i style="color:#83a1c7;">ICLR 2027 (In Submission) &nbsp;</i></b>
+    </div>
+  </div>
+</div>
+
+<div class="publication-card">
+  <div style="display: flex; align-items: center;">
+    <div class="pub-media-rotator" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
+      <div style="width: 320px; height: 180px; background: #f0f2f5; display: flex; align-items: center; justify-content: center; color: #98a2b3; font-size: 13px;">Teaser figure coming soon</div>
+    </div>
+    <div>
+      <strong>EmbodiedSmith: Scaling Embodied Data through Recursive Self-Improvement Flywheel in Simulation</strong><br>
+      <i style="font-size: 13px;">
+        Yikai Qin, Mingji Liang, Yifei Deng, Wenxuan Song,
+        <a href="https://oplisty.github.io/" target="_blank"><strong>ZePeng Lin</strong></a>,
+        Zhiyi Jiang, Jiajun Fu, Qiao Sun, Huashuo Lei, Xicheng Gong, Jiayi Chen, Han Zhao, Shuanghao Bai, Pengxiang Ding, Pengwei Wang, Haorang Li.
+      </i><br>
+      A recursive self-improvement flywheel that scales embodied data generation in simulation.
+      <br>
+      <b><i style="color:#83a1c7;">ICLR 2027 (In Submission) &nbsp;</i></b>
+    </div>
+  </div>
+</div>
 </div>
 
 
