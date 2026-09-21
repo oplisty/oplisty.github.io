@@ -306,6 +306,7 @@ Publications
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
       <img src="images/embodiedsmith-teaser.png" alt="EmbodiedSmith teaser" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
+      <video src="downloads/embodiedsmith-demo.mp4" muted playsinline style="width: 320px; height: 180px; object-fit: contain; margin: 0 auto;"></video>
     </div>
     <div>
       <strong>EmbodiedSmith: Scaling Embodied Data through Recursive Self-Improvement Flywheel in Simulation</strong><br>
