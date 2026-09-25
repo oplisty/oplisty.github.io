@@ -288,7 +288,7 @@ Publications
 <div class="publication-card">
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
-      <div style="width: 320px; height: 180px; background: #f0f2f5; display: flex; align-items: center; justify-content: center; color: #98a2b3; font-size: 13px;">Teaser figure coming soon</div>
+      <img src="images/stableworld-teaser.png" alt="Stable World teaser" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
     </div>
     <div>
       <strong>Stable World: Reinforcement Learning for Action-Conditioned World Model for Stable Embodied Simulation</strong><br>
