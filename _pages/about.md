@@ -291,7 +291,7 @@ Publications
       <img src="images/stableworld-teaser.png" alt="Stable World teaser" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
     </div>
     <div>
-      <strong>Stable World: Reinforcement Learning for Action-Conditioned World Model for Stable Embodied Simulation</strong><br>
+      <strong>DreamTamer: From Lucky Samples to Reliable Futures in Action-Conditioned World Models</strong><br>
       <i style="font-size: 13px;">
         Haobo Li, Yanhong Zeng, Zeyu Lou,
         <a href="https://oplisty.github.io/" target="_blank"><strong>ZePeng Lin</strong></a>,
