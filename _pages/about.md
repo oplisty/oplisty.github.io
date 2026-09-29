@@ -295,7 +295,7 @@ Publications
       <i style="font-size: 13px;">
         Haobo Li, Yanhong Zeng, Zeyu Lou,
         <a href="https://oplisty.github.io/" target="_blank"><strong>ZePeng Lin</strong></a>,
-        Haoran Qian, Qin Zhao, Zhihao Xie, Zipeng Zhang.
+        Haoran Qian, Qin Zhao, Zhihao Xie, Zhipeng Zhang.
       </i><br>
       An action-conditioned world model trained with reinforcement learning to keep embodied simulation stable.
       <br>
