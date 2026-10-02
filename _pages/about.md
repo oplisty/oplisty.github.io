@@ -349,6 +349,24 @@ Publications
 
 Projects
 --------
+<div class="project-card" data-category="project">
+  <div style="display: flex; align-items: center;">
+    <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
+      <div style="width: 320px; height: 180px; background: #f0f2f5; display: flex; align-items: center; justify-content: center; color: #98a2b3; font-size: 13px;">Cover image coming soon</div>
+    </div>
+    <div>
+      <strong>RoboPrep</strong><br>
+      <i style="font-size: 13px;">
+        <a href="https://oplisty.github.io/" target="_blank"><strong>Zepeng Lin</strong></a>.
+      </i><br>
+      An embodied AI interview preparation platform: curated interview questions and knowledge base, an ML coding judge, and company intelligence for robotics roles.
+      <br>
+      <b><i style="color:#83a1c7;">Project &nbsp;</i></b>
+      <a href="https://github.com/oplisty/RoboPrep"><em>[code]</em></a>
+    </div>
+  </div>
+</div>
+
 <div class="project-card" data-category="project"> 
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
