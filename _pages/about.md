@@ -352,7 +352,7 @@ Projects
 <div class="project-card" data-category="project">
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
-      <div style="width: 320px; height: 180px; background: #f0f2f5; display: flex; align-items: center; justify-content: center; color: #98a2b3; font-size: 13px;">Cover image coming soon</div>
+      <img src="images/roboprep.png" alt="RoboPrep UI screenshot" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
     </div>
     <div>
       <strong>RoboPrep</strong><br>
