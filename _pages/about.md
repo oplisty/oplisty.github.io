@@ -339,8 +339,7 @@ Publications
       We propose a code-driven reasoning framework that renders executable scene layouts as deterministic visual drafts before refining them into high-fidelity text-to-image results. We also introduce CoCo-10K for learning structured draft-to-final image refinement.
       <br>
       <b><i style="color:#83a1c7;">ECCV 2026 (Accepted) &nbsp;</i></b>
-      <a href="https://arxiv.org/abs/2603.08652" target="_blank"><em>[arXiv]</em></a>
-      <a href="https://arxiv.org/pdf/2603.08652" target="_blank"><em>[PDF]</em></a>
+      <span class="pub-badges"><a class="pub-badge pub-badge-arxiv" href="https://arxiv.org/abs/2603.08652" target="_blank">arXiv:2603.08652</a><a class="pub-badge pub-badge-pdf" href="https://arxiv.org/pdf/2603.08652" target="_blank">PDF</a></span>
     </div>
   </div>
 </div>

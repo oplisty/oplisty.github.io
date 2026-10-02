@@ -598,3 +598,44 @@
 
 
 
+
+        /* paper link badges (arXiv / PDF) */
+        .pub-badges {
+            display: inline-flex;
+            gap: 8px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+        .pub-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 2px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 1.7;
+            text-decoration: none !important;
+            transition: all 0.2s ease;
+        }
+        .pub-badge:hover {
+            transform: translateY(-1px);
+            text-decoration: none !important;
+        }
+        .pub-badge-arxiv {
+            background: #b31b1b;
+            color: #fff !important;
+        }
+        .pub-badge-arxiv:hover {
+            box-shadow: 0 2px 10px rgba(179, 27, 27, 0.4);
+            color: #fff !important;
+        }
+        .pub-badge-pdf {
+            background: #fff;
+            color: #444 !important;
+            border: 1px solid #d0d5dd;
+        }
+        .pub-badge-pdf:hover {
+            border-color: #b31b1b;
+            color: #b31b1b !important;
+        }
