@@ -421,3 +421,4 @@ Talks
 - 
 
 <script src="/assets/js/pub_media_rotator.js"></script>
+<script src="/assets/js/click-confetti.js"></script>
