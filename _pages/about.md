@@ -339,7 +339,7 @@ Publications
       We propose a code-driven reasoning framework that renders executable scene layouts as deterministic visual drafts before refining them into high-fidelity text-to-image results. We also introduce CoCo-10K for learning structured draft-to-final image refinement.
       <br>
       <b><i style="color:#83a1c7;">ECCV 2026 (Accepted) &nbsp;</i></b>
-      <span class="pub-badges"><a class="pub-badge pub-badge-arxiv" href="https://arxiv.org/abs/2603.08652" target="_blank">arXiv:2603.08652</a><a class="pub-badge pub-badge-pdf" href="https://arxiv.org/pdf/2603.08652" target="_blank">PDF</a></span>
+      <span class="pub-badges"><a class="pub-badge pub-badge-arxiv" href="https://arxiv.org/abs/2603.08652" target="_blank">arXiv:2603.08652</a></span>
     </div>
   </div>
 </div>
@@ -360,8 +360,7 @@ Projects
       </i><br>
       An embodied AI interview preparation platform: curated interview questions and knowledge base, an ML coding judge, and company intelligence for robotics roles.
       <br>
-      <b><i style="color:#83a1c7;">Project &nbsp;</i></b>
-      <a href="https://github.com/oplisty/RoboPrep"><em>[code]</em></a>
+      <a class="pub-badge pub-badge-github" href="https://github.com/oplisty/RoboPrep"><i class="fab fa-github"></i>GitHub</a>
     </div>
   </div>
 </div>
@@ -376,8 +375,7 @@ Projects
       <strong>AutoDataGen</strong><br>
       Responsible for adapting curobo to different robots and generating simulation data for mobile manipulation robots, including curobo and IK adaptation for various mobile-base robots (e.g., G1, X7s) and development of corresponding adapters. Built IsaacLab gym environments and wrote environment registration code for different robots, covering three actuation modes (e.g., absolute and relative joint-angle control). Also fixed the IsaacLab platform bug where PhysX and USD misalignment caused curobo collision-avoidance failures.
       <br> 
-      <b><i style="color:#83a1c7;">Project &nbsp;</i></b> 
-      <a href="https://github.com/LightwheelAI/AutoDataGen/"><em>[code]</em></a> 
+      <a class="pub-badge pub-badge-github" href="https://github.com/LightwheelAI/AutoDataGen"><i class="fab fa-github"></i>GitHub</a>
     </div>
   </div> 
 </div>
@@ -394,8 +392,7 @@ Projects
       </i><br>
      A research-oriented repository for dynamic scheduling of new energy logistics fleets, featuring a graph-based simulation engine, Guangzhou Panyu district real road-network data, online heuristic and Q-learning policies, an offline MILP baseline, a FastAPI backend, and a web visualization frontend.
       <br> 
-      <b><i style="color:#83a1c7;">Project &nbsp;</i></b> 
-      <a href="https://github.com/oplisty/GraphRL-Fleet.git"><em>[code]</em></a> 
+      <a class="pub-badge pub-badge-github" href="https://github.com/oplisty/GraphRL-Fleet"><i class="fab fa-github"></i>GitHub</a>
     </div>
   </div> 
 </div>
@@ -412,8 +409,7 @@ Projects
       </i><br>
       Summary of answers to publicly available foreign courses that have been studied.
       <br> 
-      <b><i style="color:#83a1c7;">Project &nbsp;</i></b> 
-      <a href="https://github.com/oplisty/HW4openclass"><em>[code]</em></a> 
+      <a class="pub-badge pub-badge-github" href="https://github.com/oplisty/HW4openclass"><i class="fab fa-github"></i>GitHub</a>
     </div>
   </div> 
 </div>
