@@ -595,7 +595,12 @@
             display: inline-flex;
             gap: 8px;
             margin-left: 6px;
+            margin-top: 12px;
             vertical-align: middle;
+        }
+        .project-card .pub-badge {
+            margin-top: 12px;
+            margin-bottom: 4px;
         }
         .pub-badge {
             display: inline-flex;
