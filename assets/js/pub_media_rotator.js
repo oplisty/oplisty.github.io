@@ -104,9 +104,27 @@ const initRotators = () => {
     items.forEach((el) => {
       if (el.tagName !== 'VIDEO') return;
 
-      el.addEventListener('error', fallbackToImage, { once: true });
+      // 视频在监听器挂载前就已加载失败（如文件缺失）时直接回退到图片
+      if (el.error) {
+        items = items.filter((item) => item !== el);
+        el.remove();
+        if (items.length === 1) {
+          fallbackToImage();
+          return;
+        }
+      }
+
+      el.addEventListener('error', () => {
+        items = items.filter((item) => item !== el);
+        el.remove();
+        fallbackToImage();
+      });
       const source = el.querySelector('source');
-      if (source) source.addEventListener('error', fallbackToImage, { once: true });
+      if (source) source.addEventListener('error', () => {
+        items = items.filter((item) => item !== el);
+        el.remove();
+        fallbackToImage();
+      });
     });
 
     show(idx);

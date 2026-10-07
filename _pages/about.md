@@ -276,9 +276,6 @@ Industry Experience
     </li>
   </ul>
 </div>
-
-<script src="assets/js/show_publications.js"></script>
-<script src="assets/js/pub_media_rotator.js"></script>
 -->
 
 
@@ -319,7 +316,9 @@ Publications
       </i><br>
       A recursive self-improvement flywheel that scales embodied data generation in simulation.
       <br>
-      <b><i style="color:#83a1c7;">ICLR 2027 (In Submission) &nbsp;</i></b>
+      <b><i style="color:#83a1c7;">ICLR 2027 (In Submission)</i></b>
+      <br>
+      <a class="pub-badge pub-badge-arxiv" href="https://arxiv.org/abs/2610.07969v1" target="_blank">arXiv:2610.07969</a>
     </div>
   </div>
 </div>
@@ -338,8 +337,9 @@ Publications
       </i><br>
       We propose a code-driven reasoning framework that renders executable scene layouts as deterministic visual drafts before refining them into high-fidelity text-to-image results. We also introduce CoCo-10K for learning structured draft-to-final image refinement.
       <br>
-      <b><i style="color:#83a1c7;">ECCV 2026 (Accepted) &nbsp;</i></b>
-      <span class="pub-badges"><a class="pub-badge pub-badge-arxiv" href="https://arxiv.org/abs/2603.08652" target="_blank">arXiv:2603.08652</a></span>
+      <b><i style="color:#83a1c7;">ECCV 2026 (Accepted)</i></b>
+      <br>
+      <a class="pub-badge pub-badge-arxiv" href="https://arxiv.org/abs/2603.08652" target="_blank">arXiv:2603.08652</a>
     </div>
   </div>
 </div>
@@ -369,7 +369,7 @@ Projects
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
       <img src="images/autodatagen.png" alt="AutoDataGen" style="width: 320px; height: 180px; object-fit: contain; display: block; margin: 0 auto;">
-      <video src="downloads/autodatagen.mp4" muted playsinline style="width: 320px; height: 180px; object-fit: contain; margin: 0 auto;"></video>
+      <video src="downloads/autodatagen.mp4?v=3" muted playsinline style="width: 320px; height: 180px; object-fit: contain; margin: 0 auto;"></video>
     </div>
     <div> 
       <strong>AutoDataGen</strong><br>

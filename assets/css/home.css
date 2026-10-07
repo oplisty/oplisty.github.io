@@ -598,7 +598,9 @@
             margin-top: 12px;
             vertical-align: middle;
         }
-        .project-card .pub-badge {
+        .project-card .pub-badge,
+        .publication-card .pub-badge-arxiv {
+            margin-left: 0;
             margin-top: 12px;
             margin-bottom: 4px;
         }
