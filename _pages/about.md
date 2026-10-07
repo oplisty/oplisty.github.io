@@ -310,10 +310,11 @@ Publications
     <div>
       <strong>EmbodiedSmith: Scaling Embodied Data through Recursive Self-Improvement Flywheel in Simulation</strong><br>
       <i style="font-size: 13px;">
-        Yikai Qin, Mingji Liang, Yifei Deng, Wenxuan Song,
-        <a href="https://oplisty.github.io/" target="_blank"><strong>ZePeng Lin</strong></a>,
-        Zhiyi Jiang, Jiajun Fu, Qiao Sun, Huashuo Lei, Xicheng Gong, Jiayi Chen, Han Zhao, Shuanghao Bai, Pengxiang Ding, Pengwei Wang, Haorang Li.
+        Yikai Qin<sup>*</sup>, Yifei Deng<sup>*</sup>, Mingjian Liang<sup>*</sup>, Wenxuan Song<sup>†,*</sup>,
+        <a href="https://oplisty.github.io/" target="_blank"><strong>ZePeng Lin</strong></a><sup>*</sup>,
+        Zhiyi Jiang<sup>*</sup>, Jiajun Fu, Qiao Sun, Huashuo Lei, Xicheng Gong, Jiayi Chen, Han Zhao, Shuanghao Bai, Pengxiang Ding, Pengwei Wang, Haoang Li<sup>‡</sup>.
       </i><br>
+      <i style="font-size: 11px; color: #6b7280;"><sup>*</sup>Equal Contribution, <sup>†</sup>Project Lead, <sup>‡</sup>Corresponding Author.</i><br>
       A recursive self-improvement flywheel that scales embodied data generation in simulation.
       <br>
       <b><i style="color:#83a1c7;">ICLR 2027 (In Submission)</i></b>
@@ -331,10 +332,11 @@ Publications
     <div>
       <strong>CoCo: Code as CoT for Text-to-Image Preview and Rare Concept Generation</strong><br>
       <i style="font-size: 13px;">
-        Haodong Li, Chunmei Qing, Huanyu Zhang, Dongzhi Jiang, Yihang Zou, Hongbo Peng, Dingming Li, Yuhong Dai,
+        Haodong Li, Chunmei Qing<sup>*</sup>, Huanyu Zhang, Dongzhi Jiang, Yihang Zou, Hongbo Peng, Dingming Li, Yuhong Dai,
         <a href="https://oplisty.github.io/" target="_blank"><strong>ZePeng Lin</strong></a>,
-        Juanxi Tian, Yi Zhou, Siqi Dai, Jingwei Wu, Pheng-Ann Heng.
+        Juanxi Tian, Yi Zhou, Siqi Dai, Jingwei Wu, Pheng-Ann Heng<sup>*</sup>.
       </i><br>
+      <i style="font-size: 11px; color: #6b7280;"><sup>*</sup>Corresponding author.</i><br>
       We propose a code-driven reasoning framework that renders executable scene layouts as deterministic visual drafts before refining them into high-fidelity text-to-image results. We also introduce CoCo-10K for learning structured draft-to-final image refinement.
       <br>
       <b><i style="color:#83a1c7;">ECCV 2026 (Accepted)</i></b>
