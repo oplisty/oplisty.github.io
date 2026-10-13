@@ -32,7 +32,7 @@ News
 Research Experience
 --------------
 
-<div class="experience-container">
+<div class="experience-container research-experience-scroll">
 
   <div class="experience-card">
       <img src="images/iiis-emblem.png" alt="IIIS institute emblem" class="experience-logo">

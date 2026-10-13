@@ -75,6 +75,15 @@
         flex-direction: column; /* Stack cards vertically. */
         gap: 20px; /* Keep spacing between cards. */
     }
+    .research-experience-scroll {
+        height: 330px;
+        overflow-y: auto;
+        padding-right: 10px;
+        scrollbar-gutter: stable;
+    }
+    .research-experience-scroll .experience-card {
+        flex-shrink: 0;
+    }
     .experience-card {
         box-sizing: border-box;
     }
@@ -503,6 +512,10 @@
     }
 
       @media (max-width: 720px) {
+        .research-experience-scroll {
+            height: 410px;
+        }
+
         .publication-card,
         .project-card {
             align-items: stretch;
