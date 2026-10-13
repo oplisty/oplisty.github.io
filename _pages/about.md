@@ -35,11 +35,21 @@ Research Experience
 <div class="experience-container">
 
   <div class="experience-card">
+      <img src="images/iiis-emblem.png" alt="IIIS institute emblem" class="experience-logo">
+      <div class="experience-info">
+          <strong><a href="https://iiis.tsinghua.edu.cn/" target="_blank">Tsinghua University Institute for Interdisciplinary Information Sciences (IIIS)</a></strong><br>
+          <em>2026.11 - Present</em><br>
+          Research project supervised by <a href="https://www.mengdixu.me/" target="_blank"><em>Mengdi Xu</em></a>, in cooperation with <a href="https://jedward225.github.io/" target="_blank"><em>Jiajun Liu</em></a><br>
+          <span style="color:#888;">Research on Embodied AI and robotic learning.</span>
+      </div>
+  </div>
+
+  <div class="experience-card">
       <img src="images/HKUST.png" alt="HKUST logo" class="experience-logo">
       <div class="experience-info">
           <strong>HKUST</strong><br>
           <em>2026.07 - Present</em><br>
-          Robotic Learning Intern cooperate with <a href="https://songwxuan.github.io/"><em>Wengxuan Song</em></a><br>
+          Robotic Learning Intern cooperate with <a href="https://songwxuan.github.io/"><em>Wenxuan Song</em></a><br>
           <span style="color:#888;">Main contribution: Responsible for generating large-scale robot memory datasets and contributing to the pretraining of robotic memory capabilities. Also led the design of a benchmark to evaluate the error-recovery capabilities of Vision-Language-Action (VLA) models in mobile manipulation tasks.</span>
       </div>
   </div>
