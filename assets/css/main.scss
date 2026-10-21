@@ -49,6 +49,36 @@
     padding-right: 0 !important;
   }
 }
+
+/* Keep the Pi-series ablation figure readable without stretching it across the article. */
+.page__content figure.figure--compact {
+  display: block;
+  text-align: center;
+}
+
+.page__content figure.figure--compact img {
+  width: 78%;
+  max-width: 568px;
+  margin: 0 auto 1em;
+}
+
+.page__content h4 {
+  font-size: 1.05rem;
+  margin-top: 1.8em;
+}
+
+.page__content figure figcaption {
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .page__content figure.figure--compact img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* ====================================================
    响应式调整：手机端图在上(居中)、字在下(左对齐)，不影响电脑端 
    ==================================================== */
