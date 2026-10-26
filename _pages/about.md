@@ -2,7 +2,7 @@
 permalink: /
 author_profile: true
 stylesheets:
-  - /assets/css/home.css
+  - /assets/css/home.css?v=20261026
 redirect_from: 
   - /about/
   - /about.html
@@ -293,7 +293,8 @@ Industry Experience
 
 Publications
 --------------
-<div id="publications">
+<p class="card-scroll-hint" id="publications-scroll-hint">3 publications · Scroll to explore ↓</p>
+<div id="publications-list" class="two-card-scroll" tabindex="0" role="region" aria-labelledby="publications" aria-describedby="publications-scroll-hint">
 <div class="publication-card">
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
@@ -362,6 +363,26 @@ Publications
 
 Projects
 --------
+<p class="card-scroll-hint" id="projects-scroll-hint">5 projects · Scroll to explore ↓</p>
+<div id="projects-list" class="two-card-scroll" tabindex="0" role="region" aria-labelledby="projects" aria-describedby="projects-scroll-hint">
+<div class="project-card project-card--challenge" data-category="project">
+  <div style="display: flex; align-items: center;">
+    <figure class="project-demo">
+      <video src="{{ '/downloads/robosyn-official-table-rearrangement.mp4' | relative_url }}" controls muted loop playsinline preload="metadata" aria-label="Official RoboSynChallenge table rearrangement simulation demo"></video>
+    </figure>
+    <div>
+      <strong>RoboSynChallenge @ NeurIPS 2026</strong><br>
+      <i style="font-size: 13px;"><a href="https://oplisty.github.io/"><strong>Zepeng Lin</strong></a>, Yifan Liu, Wei Shan, Yinuo Ge, Muyang Li.</i>
+      <div class="project-result"><strong>11 / 386</strong><span>Preliminary round · Top 2.9%</span></div>
+      <p class="project-summary">Our team qualified for the final round as one of 21 finalist teams in this robot manipulation challenge, bridging simulation and real-world evaluation.</p>
+      <div class="project-links">
+        <span class="pub-badge project-finalist">Finalist</span>
+        <a class="pub-badge" href="https://robosyn-bench.net/" target="_blank" rel="noopener noreferrer">Challenge website ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="project-card" data-category="project">
   <div style="display: flex; align-items: center;">
     <div class="pub-media-rotator" data-interval="4000" style="position: relative; width: 320px; height: 180px; margin-right: 20px; border-radius: 8px; overflow: hidden; flex: 0 0 auto;">
@@ -430,6 +451,8 @@ Projects
 
 
 
+</div>
+
 Awards
 --------
 - *2026.10*, <strong>Finalist</strong>, <strong><a href="https://robosyn-bench.net/" target="_blank" rel="noopener noreferrer">RoboSynChallenge @ NeurIPS 2026</a></strong> — Preliminary round: <strong>11 / 386 teams (Top 2.9%)</strong>.
@@ -449,4 +472,5 @@ Talks
 - 
 
 <script src="/assets/js/pub_media_rotator.js"></script>
+<script src="{{ '/assets/js/card-scroll.js' | relative_url }}" defer></script>
 <script src="/assets/js/click-confetti.js"></script>
