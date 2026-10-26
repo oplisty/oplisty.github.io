@@ -18,6 +18,8 @@ News
 <div class="news-box">
   <ul class="news-list">
 
+<li><span class="news-date"><em>2026.10</em></span> 🎉 Our team ranked <strong>11th out of 386 teams (Top 2.9%)</strong> in the preliminary round of <strong><a href="https://robosyn-bench.net/" target="_blank" rel="noopener noreferrer">RoboSynChallenge @ NeurIPS 2026</a></strong>, advancing to the final round as one of <strong>21 finalist teams</strong>.</li>
+
 <li><span class="news-date"><em>2026.05</em></span> 🎉🎉 <strong>ECCV +1</strong>! Our paper <strong>CoCo</strong> was accepted to ECCV 2026.</li>
 
 <li><span class="news-date"><em>2025.11</em></span> 🎉🎉 I won the first prise in <strong><a href="https://www.cms.org.cn/Home/comp/comp_details/id/1434.html">The Chinese Mathematics Competitions for College Students</a></strong> (Top 6%).</li>
@@ -430,6 +432,7 @@ Projects
 
 Awards
 --------
+- *2026.10*, <strong>Finalist</strong>, <strong><a href="https://robosyn-bench.net/" target="_blank" rel="noopener noreferrer">RoboSynChallenge @ NeurIPS 2026</a></strong> — Preliminary round: <strong>11 / 386 teams (Top 2.9%)</strong>.
 - *2025.11*, The first prise in <strong><a href="https://www.cms.org.cn/Home/comp/comp_details/id/1434.html">The Chinese Mathematics Competitions for College Students</a></strong> (Top 6%).
 - *2025.05*, Meritorious Winner in <strong><a href="https://www.comap.com/contests/mcm-icm">Mathematical Contest in Modeling</a></strong> (Top 6%).
 
