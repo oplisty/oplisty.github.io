@@ -18,7 +18,7 @@ News
 <div class="news-box">
   <ul class="news-list">
 
-<li><span class="news-date"><em>2026.10</em></span> 🎉 Our team ranked <strong>11th out of 386 teams (Top 2.9%)</strong> in the preliminary round of <strong><a href="https://robosyn-bench.net/" target="_blank" rel="noopener noreferrer">RoboSynChallenge @ NeurIPS 2026</a></strong>, advancing to the final round as one of <strong>21 finalist teams</strong>.</li>
+<li><span class="news-date"><em>2026.10</em></span> 🎉 Our team ranked <strong>9th out of 47 teams (Top 19.1%)</strong> in the preliminary round of <strong><a href="https://robosyn-bench.net/" target="_blank" rel="noopener noreferrer">RoboSynChallenge @ NeurIPS 2026</a></strong>, advancing to the final round as one of <strong>21 finalist teams</strong>.</li>
 
 <li><span class="news-date"><em>2026.05</em></span> 🎉🎉 <strong>ECCV +1</strong>! Our paper <strong>CoCo</strong> was accepted to ECCV 2026.</li>
 
@@ -373,7 +373,7 @@ Projects
     <div>
       <strong>RoboSynChallenge @ NeurIPS 2026</strong><br>
       <i style="font-size: 13px;"><a href="https://oplisty.github.io/"><strong>Zepeng Lin</strong></a>, Yifan Liu, Wei Shan, Yinuo Ge, Muyang Li.</i>
-      <div class="project-result"><strong>11 / 386</strong><span>Preliminary round · Top 2.9%</span></div>
+      <div class="project-result"><strong>9 / 47</strong><span>Preliminary round · Top 19.1%</span></div>
       <p class="project-summary">Our team qualified for the final round as one of 21 finalist teams in this robot manipulation challenge, bridging simulation and real-world evaluation.</p>
       <div class="project-links">
         <span class="pub-badge project-finalist">Finalist</span>
@@ -455,7 +455,7 @@ Projects
 
 Awards
 --------
-- *2026.10*, <strong>Finalist</strong>, <strong><a href="https://robosyn-bench.net/" target="_blank" rel="noopener noreferrer">RoboSynChallenge @ NeurIPS 2026</a></strong> — Preliminary round: <strong>11 / 386 teams (Top 2.9%)</strong>.
+- *2026.10*, <strong>Finalist</strong>, <strong><a href="https://robosyn-bench.net/" target="_blank" rel="noopener noreferrer">RoboSynChallenge @ NeurIPS 2026</a></strong> — Preliminary round: <strong>9 / 47 teams (Top 19.1%)</strong>.
 - *2025.11*, The first prise in <strong><a href="https://www.cms.org.cn/Home/comp/comp_details/id/1434.html">The Chinese Mathematics Competitions for College Students</a></strong> (Top 6%).
 - *2025.05*, Meritorious Winner in <strong><a href="https://www.comap.com/contests/mcm-icm">Mathematical Contest in Modeling</a></strong> (Top 6%).
 
